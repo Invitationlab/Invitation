@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ══════════════════════════════════════════
+/* ═══════════════════════════════════════════
    RESET & BASE
    ═══════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -47,7 +47,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ═══════════════════════════════════════════
    COVER SCREEN
-   ══════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .cover-screen {
   position: fixed;
   inset: 0;
@@ -155,7 +155,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ═══════════════════════════════════════════
    FLOATING FLOWERS
-   ══════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .flower {
   position: fixed; pointer-events: none; z-index: 2;
   font-size: 20px; opacity: 0.3;
@@ -329,7 +329,147 @@ a { text-decoration: none; color: inherit; }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ══════════════════════════════════════════
+/* ═══════════════════════════════════════════
+   ✨ COUNTDOWN SECTION (NEW)
+   ═══════════════════════════════════════════ */
+.countdown-section {
+  position: relative;
+  z-index: 2;
+  padding: 120px 24px;
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--blush) 100%);
+  text-align: center;
+  overflow: hidden;
+}
+
+.countdown-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.countdown-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  letter-spacing: 7px;
+  color: var(--champagne-deep);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  animation: fadeUp 1.5s ease-out both;
+}
+
+.countdown-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 4vw, 40px);
+  color: var(--ink);
+  margin-bottom: 50px;
+  line-height: 1.3;
+  animation: fadeUp 1.5s ease-out 0.3s both;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.countdown-item {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 169, 106, 0.3);
+  border-radius: 24px;
+  padding: 30px 15px;
+  box-shadow: 
+    0 20px 50px rgba(60, 45, 20, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 1.5s ease-out both;
+}
+
+.countdown-item:nth-child(1) { animation-delay: 0.4s; }
+.countdown-item:nth-child(2) { animation-delay: 0.6s; }
+.countdown-item:nth-child(3) { animation-delay: 0.8s; }
+.countdown-item:nth-child(4) { animation-delay: 1s; }
+
+.countdown-item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
+}
+
+.countdown-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 30px 70px rgba(60, 45, 20, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: rgba(200, 169, 106, 0.5);
+}
+
+.countdown-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(38px, 7vw, 64px);
+  line-height: 1;
+  background: linear-gradient(135deg, var(--champagne-deep) 0%, var(--champagne) 50%, var(--champagne-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+  display: block;
+  text-shadow: 0 0 30px rgba(200, 169, 106, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.countdown-number.flip {
+  animation: flipNumber 0.5s ease;
+}
+
+@keyframes flipNumber {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(90deg); opacity: 0.5; }
+  100% { transform: rotateX(0deg); opacity: 1; }
+}
+
+.countdown-label-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.countdown-event-message {
+  margin-top: 50px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(17px, 2.2vw, 21px);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  animation: fadeUp 1.5s ease-out 1.3s both;
+}
+
+@media (max-width: 600px) {
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .countdown-item { padding: 25px 10px; }
+  .countdown-label-text { font-size: 9px; letter-spacing: 2px; }
+}
+
+@media (max-width: 360px) {
+  .countdown-number { font-size: 32px; }
+}
+
+/* ═══════════════════════════════════════════
    SECTION BASE
    ═══════════════════════════════════════════ */
 section {
@@ -803,323 +943,4 @@ section {
   transition: all 0.5s ease;
   z-index: 1000;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.music-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 35px rgba(200, 169, 106, 0.6);
-}
-
-.music-toggle.playing {
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-/* ═══════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════ */
-footer {
-  text-align: center;
-  padding: 60px 24px;
-  background: var(--beige);
-  color: var(--ink-soft);
-}
-
-.footer-ornament {
-  font-size: 24px;
-  color: var(--champagne);
-  margin-bottom: 20px;
-  letter-spacing: 8px;
-}
-
-footer p {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-footer .names {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  letter-spacing: 4px;
-  color: var(--champagne-deep);
-  margin-top: 15px;
-}
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════════ */
-@media(max-width: 768px) {
-  section { padding: 100px 20px; }
-  .glass-card { padding: 60px 30px; }
-  .event-card { padding: 50px 30px; }
-  .cards-grid { gap: 24px; }
-}
-
-@media(max-width: 480px) {
-  .hero-names { letter-spacing: 6px; }
-  .glass-card { padding: 50px 24px; }
-}
-</style>
-</head>
-<body>
-
-<!-- Cover Screen -->
-<div class="cover-screen" id="coverScreen">
-  <div class="cover-content">
-    <div class="cover-cross">✝</div>
-    <h1 class="cover-title">Սուրբ Մկրտություն</h1>
-    <button class="open-btn" onclick="openInvitation()">Բացել հրավիրատոմսը</button>
-  </div>
-</div>
-
-<!-- Floating Particles -->
-<div class="particles">
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-</div>
-
-<!-- Floating Flowers -->
-<div class="flower">🌸</div>
-<div class="flower">🌹</div>
-<div class="flower">🌿</div>
-
-<!-- Hidden YouTube Player -->
-<div id="yt-player" style="position: absolute; top: -9999px; left: -9999px;"></div>
-
-<!-- Music Toggle -->
-<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Միացնել/Անջատել երաժշտությունը">🎵</button>
-
-<!-- HERO SECTION -->
-<section class="hero">
-  <div class="hero-bg-image"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-cross">✝</div>
-    <div class="hero-label">Սուրբ Մկրտություն</div>
-    <h1 class="hero-title">Օրհնությամբ սկսվող նոր ճանապարհ</h1>
-    <p class="hero-subtitle">Սիրով հրավիրում ենք մասնակցելու մեր երեխաների Սուրբ Մկրտության Արարողությանը</p>
-    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐՓԻ • ՄԻՔԱՅԵԼ</div>
-    <div class="hero-date">01.11.2026</div>
-    <div class="hero-divider"></div>
-  </div>
-  <div class="scroll-indicator">Ներքև</div>
-</section>
-
-<!-- INVITATION SECTION -->
-<section class="invitation">
-  <div class="container">
-    <div class="glass-card">
-      <span class="cross-icon">✝</span>
-      <p>Օրհնությամբ և սիրով հրավիրում ենք Ձեզ մասնակցելու մեր երեխաների</p>
-      <div class="names">Ստելլայի,<br>Արփիի<br>և<br>Միքայելի</div>
-      <p>Սուրբ Մկրտության Արարողությանը։</p>
-      <div class="date-highlight">01 Նոյեմբերի, 2026</div>
-    </div>
-  </div>
-</section>
-
-<!-- DETAILS SECTION -->
-<section class="details">
-  <div class="container">
-    <div class="section-label">✦ Արարողություն ✦</div>
-    <h2 class="section-title">Մկրտության մանրամասներ</h2>
-    <div class="divider"></div>
-
-    <div class="cards-grid">
-      <div class="event-card">
-        <span class="event-icon" style="color: var(--champagne);">✝</span>
-        <h3>Սուրբ Մկրտության Արարողություն</h3>
-        <div class="event-detail">
-          <span class="icon"></span>
-          <strong>01 Նոյեմբերի, 2026</strong>
-        </div>
-        <div class="event-detail">
-          <span class="icon">🕒</span>
-          <strong>15:45</strong>
-        </div>
-        <div class="event-detail">
-          <span class="icon">📍</span>
-          <span>Սուրբ Հովհաննես Եկեղեցի</span>
-        </div>
-        <p class="subtext">Աբովյան, Հայաստան</p>
-      </div>
-
-      <div class="event-card">
-        <span class="event-icon">🥂</span>
-        <h3>Տոնական Ընդունելություն</h3>
-        <div class="event-detail">
-          <span class="icon">📍</span>
-          <span>Օրիգինալ Ռոստորան</span>
-        </div>
-        <div class="event-detail">
-          <span class="icon"></span>
-          <strong>17:00</strong>
-        </div>
-        <p class="subtext">Եկեք միասին տոնենք այս օրհնյալ օրը՝ ստեղծելով հիշողություններ, որոնք կմնան մեր սրտերում։</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE SECTION -->
-<section class="timeline-section">
-  <div class="container">
-    <div class="section-label">✦ Օրվա Ծրագիր ✦</div>
-    <h2 class="section-title">Ժամանակացույց</h2>
-    <div class="divider"></div>
-
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-time">15:45</div>
-        <div class="tl-title">Սուրբ Մկրտություն</div>
-        <div class="tl-loc">Սուրբ Հովհաննես Եկեղեցի</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">17:00</div>
-        <div class="tl-title">Տոնական ընթրիք</div>
-        <div class="tl-loc">Օրիգինալ Ռոստորան</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LOCATION SECTION -->
-<section class="location-section">
-  <div class="container">
-    <div class="section-label">✦ Վայրեր ✦</div>
-    <h2 class="section-title">Արարողության Վայրերը</h2>
-    <div class="divider"></div>
-
-    <div class="location-grid">
-      <div class="location-card">
-        <div class="location-img" style="background-image: url('Church.jpg')"></div>
-        <div class="location-body">
-          <h3>⛪ Սուրբ Հովհաննես կեղեցի</h3>
-          <p>Աբովյան, Հայաստան</p>
-          <a href="https://maps.google.com/?q=Abovyan+Armenia" target="_blank" class="location-btn">
-            <span>📍</span>
-            <span>Բացել Քարտեզում</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="location-card">
-        <div class="location-img" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85')"></div>
-        <div class="location-body">
-          <h3>🥂 Օրիգինալ Ռոստորան</h3>
-          <p>Տոնական ընթրիքի վայր</p>
-          <a href="https://maps.google.com/?q=Original+Restaurant+Armenia" target="_blank" class="location-btn">
-            <span></span>
-            <span>Բացել Քարտեզում</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE SECTION -->
-<section class="quote-section">
-  <div class="container">
-    <div class="quote-divider"></div>
-    <p class="quote-text">"Ձեր ներկայությունը կդարձնի այս օրհնյալ օրն էլ ավելի լիարժեք և անմոռանալի մեզ համար։"</p>
-    <div class="quote-divider"></div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-ornament">✦ ✦ ✦</div>
-  <p>Օրհնությամբ և սիրով պատրաստված</p>
-  <p>Սուրբ Մկրտություն · 2026</p>
-  <div class="names">ՍՏԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱԵԼ</div>
-</footer>
-
-<!-- YouTube IFrame API -->
-<script>
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var player;
-var isPlaying = false;
-
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('yt-player', {
-    height: '0',
-    width: '0',
-    videoId: '0COdq1IT5Hc',
-    playerVars: {
-      'autoplay': 0,
-      'controls': 0,
-      'disablekb': 1,
-      'fs': 0,
-      'modestbranding': 1,
-      'rel': 0,
-      'loop': 1,
-      'playlist': '0COdq1IT5Hc'
-    },
-    events: {
-      'onReady': onPlayerReady
-    }
-  });
-}
-
-function onPlayerReady(event) {
-  player.setVolume(50);
-}
-
-function toggleMusic() {
-  if (!player) return;
-  
-  var toggleBtn = document.getElementById('musicToggle');
-  
-  if (isPlaying) {
-    player.pauseVideo();
-    toggleBtn.classList.remove('playing');
-    toggleBtn.innerHTML = '🎵';
-  } else {
-    player.playVideo();
-    toggleBtn.classList.add('playing');
-    toggleBtn.innerHTML = '';
-  }
-  
-  isPlaying = !isPlaying;
-}
-
-function openInvitation() {
-  document.getElementById('coverScreen').classList.add('hidden');
-  document.body.style.overflow = 'auto';
-  
-  // Auto-play music when opening
-  setTimeout(function() {
-    if (player && !isPlaying) {
-      player.playVideo();
-      isPlaying = true;
-      document.getElementById('musicToggle').classList.add('playing');
-      document.getElementById('musicToggle').innerHTML = '🔇';
-    }
-  }, 1000);
-}
-
-// Prevent scrolling when cover is visible
-document.body.style.overflow = 'hidden';
-</script>
-
-</body>
-</html>
+  align-items: center
