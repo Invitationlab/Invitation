@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ստելլա • Արփի • իքայել — Սուրբ կրտություն</title>
-<meta name="description" content="Սիրով հրավիրում ենք մեր երեխաների՝ Ստելլայի, Արփիի և Միքայելի սուրբ մկրտության արարողությանը։" />
+<title>Ստելլա • Արփի • Միքայել — Սուրբ Մկրտություն</title>
+<meta name="description" content="իրով հրավիրում ենք մեր երեխաների՝ Ստելլայի, Արփիի և Միքայելի սուրբ մկրտության արարողությանը։" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,8 +96,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ═══════════════════════════════════════════
-   HERO SECTION - LIGHT BACKGROUND
-   ═══════════════════════════════════════════ */
+   HERO SECTION - WITH CHILDREN BACKGROUND
+   ══════════════════════════════════════════ */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -106,7 +106,6 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--ivory) 0%, var(--beige) 50%, var(--blush) 100%);
 }
 
 .hero-bg-image {
@@ -115,13 +114,22 @@ a { text-decoration: none; color: inherit; }
   background-image: url('https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1920&q=85');
   background-size: cover;
   background-position: center;
-  opacity: 0.08;
+  background-attachment: fixed;
   animation: slowZoom 20s ease-in-out infinite alternate;
 }
 
 @keyframes slowZoom {
   0% { transform: scale(1); }
   100% { transform: scale(1.05); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(253, 251, 249, 0.3) 0%, 
+    rgba(253, 251, 249, 0.5) 50%, 
+    rgba(253, 251, 249, 0.7) 100%);
 }
 
 .hero-content {
@@ -619,7 +627,7 @@ section {
 
 /* ═══════════════════════════════════════════
    QUOTE SECTION
-   ══════════════════════════════════════════ */
+   ═════════════════════════════════════════ */
 .quote-section {
   background: linear-gradient(180deg, var(--ivory) 0%, var(--beige) 100%);
   text-align: center;
@@ -642,72 +650,6 @@ section {
   margin: 0 auto 40px;
   line-height: 1.6;
 }
-
-/* ═══════════════════════════════════════════
-   LOCATION SECTION
-   ═══════════════════════════════════════════ */
-.location-section {
-  background: linear-gradient(180deg, var(--beige) 0%, var(--ivory) 100%);
-  text-align: center;
-}
-
-.location-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.loc-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 20px 40px;
-  border-radius: 999px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.4));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1.5px solid rgba(200, 169, 106, 0.4);
-  color: var(--champagne-deep);
-  box-shadow: 0 10px 30px rgba(60, 45, 20, 0.08);
-  transition: all 0.5s ease;
-  position: relative;
-  overflow: hidden;
-  animation: floatBtn 4s ease-in-out infinite;
-}
-
-.loc-btn:nth-child(2) { animation-delay: 2s; }
-
-@keyframes floatBtn {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-.loc-btn::before {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, var(--champagne-deep), var(--champagne));
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: -1;
-}
-
-.loc-btn:hover {
-  color: var(--white);
-  border-color: transparent;
-  box-shadow: 0 15px 40px rgba(200, 169, 106, 0.4);
-  transform: translateY(-8px);
-}
-
-.loc-btn:hover::before { opacity: 1; }
-
-.loc-btn .btn-icon { font-size: 20px; }
 
 /* ═══════════════════════════════════════════
    FOOTER
@@ -754,8 +696,6 @@ footer .names {
 @media(max-width: 480px) {
   .hero-names { letter-spacing: 6px; }
   .glass-card { padding: 50px 24px; }
-  .location-buttons { flex-direction: column; align-items: center; }
-  .loc-btn { width: 100%; max-width: 320px; justify-content: center; }
 }
 </style>
 </head>
@@ -775,21 +715,22 @@ footer .names {
 
 <!-- Floating Flowers -->
 <div class="flower">🌸</div>
-<div class="flower">️</div>
+<div class="flower">🌹</div>
 <div class="flower">🌿</div>
 
 <!-- ═════════════════════════════════════════
-     HERO SECTION - LIGHT BACKGROUND
+     HERO SECTION - WITH CHILDREN BACKGROUND
      ═══════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-bg-image"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-cross">✝</div>
-    <div class="hero-label">Սուրբ Մկրտություն</div>
+    <div class="hero-label">Սուրբ կրտություն</div>
     <h1 class="hero-title">Օրհնությամբ սկսվող նոր ճանապարհ</h1>
     <p class="hero-subtitle">Սիրով հրավիրում ենք մասնակցելու մեր երեխաների սուրբ մկրտության արարողությանը</p>
-    <div class="hero-names">ՏԵԼԼԱ • ԱՐՓԻ • ՄՔԱՅԵԼ</div>
-    <div class="hero-date">22.07.2026</div>
+    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐՓԻ • ԻՔԱՅԵԼ</div>
+    <div class="hero-date">01.11.2026</div>
     <div class="hero-divider"></div>
   </div>
   <div class="scroll-indicator">Ներքև</div>
@@ -803,9 +744,9 @@ footer .names {
     <div class="glass-card">
       <span class="cross-icon">✝</span>
       <p>Օրհնությամբ և սիրով հրավիրում ենք Ձեզ մասնակցելու մեր երեխաների</p>
-      <div class="names">տելլա,<br>Արփի<br>և<br>Միքայել</div>
+      <div class="names">Ստելլա,<br>Արփի<br>և<br>Միքայել</div>
       <p>սուրբ մկրտության արարողությանը։</p>
-      <div class="date-highlight">22 Հուլիսի, 2026</div>
+      <div class="date-highlight">01 Նոյեմբերի, 2026</div>
     </div>
   </div>
 </section>
@@ -816,17 +757,17 @@ footer .names {
 <section class="details">
   <div class="container">
     <div class="section-label">✦ Արարողություն ✦</div>
-    <h2 class="section-title">Մկրտության մանրամասներ</h2>
+    <h2 class="section-title">կրտության մանրամասներ</h2>
     <div class="divider"></div>
 
     <div class="cards-grid">
       <!-- Ceremony Card -->
       <div class="event-card">
-        <span class="event-icon"></span>
+        <span class="event-icon">✝</span>
         <h3>Սուրբ Մկրտության Արարողություն</h3>
         <div class="event-detail">
-          <span class="icon">📅</span>
-          <strong>22 Հուլիսի, 2026</strong>
+          <span class="icon"></span>
+          <strong>01 ոյեմբերի, 2026</strong>
         </div>
         <div class="event-detail">
           <span class="icon">🕒</span>
@@ -851,7 +792,7 @@ footer .names {
           <span class="icon">🕔</span>
           <strong>17:00</strong>
         </div>
-        <p class="subtext">Միացեք մեզ երեկոյան լի ուրախությամբ, սիրով և անմոռանալի հիշողություններով։</p>
+        <p class="subtext">Միացեք մեզ երեկոյան՝ լի ուրախությամբ, սիրով և անմոռանալի հիշողություններով։</p>
       </div>
     </div>
   </div>
@@ -862,19 +803,19 @@ footer .names {
      ═══════════════════════════════════════════ -->
 <section class="timeline-section">
   <div class="container">
-    <div class="section-label">✦ Օրվա Ծրագիր </div>
+    <div class="section-label">✦ Օրվա Ծրագիր ✦</div>
     <h2 class="section-title">Ժամանակացույց</h2>
     <div class="divider"></div>
 
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-time">15:45</div>
-        <div class="tl-title">ուրբ Մկրտություն</div>
-        <div class="tl-loc">ուրբ Հովհաննես կեղեցի</div>
+        <div class="tl-title">Սուրբ Մկրտություն</div>
+        <div class="tl-loc">Սուրբ Հովհաննես Եկեղեցի</div>
       </div>
       <div class="tl-item">
         <div class="tl-time">17:00</div>
-        <div class="tl-title">Տոնական Ընթրիք</div>
+        <div class="tl-title">Տոնական նթրիք</div>
         <div class="tl-loc">Original Restaurant</div>
       </div>
     </div>
@@ -892,22 +833,22 @@ footer .names {
 
     <div class="gallery">
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&q=85" alt="Baptism Ceremony">
+        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&q=85" alt="Մկրտության արարողություն">
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1548625149-fc4a28cf4a38?w=600&q=85" alt="White Church">
+        <img src="https://images.unsplash.com/photo-1548625149-fc4a28cf4a38?w=600&q=85" alt="Սպիտակ եկեղեցի">
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1507692049791-de5e356812b3?w=600&q=85" alt="Candles">
+        <img src="https://images.unsplash.com/photo-1507692049791-de5e356812b3?w=600&q=85" alt="ոմեր">
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=85" alt="White Roses">
+        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=85" alt="պիտակ վարդեր">
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=85" alt="Baby Blessing">
+        <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=85" alt="Մանուկ">
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600&q=85" alt="Golden Cross">
+        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600&q=85" alt="Ոսկե աչ">
       </div>
     </div>
   </div>
@@ -924,36 +865,14 @@ footer .names {
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     LOCATION SECTION
-     ═══════════════════════════════════════════ -->
-<section class="location-section">
-  <div class="container">
-    <div class="section-label">✦ Վայրեր ✦</div>
-    <h2 class="section-title">Գտնվելու Վայրը</h2>
-    <div class="divider"></div>
-
-    <div class="location-buttons">
-      <a href="https://maps.google.com/?q=Abovyan+Armenia" target="_blank" class="loc-btn">
-        <span class="btn-icon">⛪</span>
-        <span>Բացել Եկեղեցու Վայրը</span>
-      </a>
-      <a href="https://maps.google.com/?q=Original+Restaurant+Armenia" target="_blank" class="loc-btn">
-        <span class="btn-icon">🍽</span>
-        <span>Բացել եստորանի Վայրը</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════════════════════════════════════
      FOOTER
      ═══════════════════════════════════════════ -->
 <footer>
   <div class="footer-ornament">✦ ✦ ✦</div>
   <p>Օրհնությամբ և սիրով պատրաստված</p>
-  <p>Սուրբ Մկրտություն · 2026</p>
-  <div class="names">ՍԵԼԼԱ · ԱՐՓԻ · ՄՔԱՅԵԼ</div>
+  <p>ուրբ Մկրտություն · 2026</p>
+  <div class="names">ՍՏԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱՅԵ</div>
 </footer>
 
 </body>
