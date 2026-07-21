@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hy">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stella • Arpi • Michael — Holy Baptism</title>
-<meta name="description" content="With God's blessing and endless love, we invite you to celebrate the Holy Baptism of our beloved children." />
+<title>Ստելլա • Արփի • Միքայել — Սուրբ Մկրտություն</title>
+<meta name="description" content="Աստծո օրհնությամբ և անսահման սիրով, հրավիրում ենք ձեզ մասնակցելու մեր սիրելի երեխաների Սուրբ Մկրտության տոնակատարությանը:" />
 
-<!-- Fonts -->
+<!-- Fonts: Cinzel, Cormorant Garamond և Noto Sans Armenian (հայերենի համար) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+Armenian:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <!-- GSAP for Premium Animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -17,9 +17,10 @@
 
 <style>
 :root {
-  --ivory: #fbf7f0;
-  --ivory-2: #f6efe3;
-  --pearl: #efe7d7;
+  /* Նուրբ բեժ (Beige) գունապնակ */
+  --ivory: #f5f0e1;
+  --ivory-2: #ebe3d0;
+  --pearl: #e0d5bf;
   --champagne: #c9a96a;
   --champagne-deep: #a8874a;
   --gold: #d4b46a;
@@ -29,10 +30,10 @@
   --muted: #8a7e6a;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; cursor: none; /* Hide default cursor for custom one */ }
+* { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Noto Sans Armenian', 'Cormorant Garamond', serif;
   background: var(--ivory);
   color: var(--ink);
   overflow-x: hidden;
@@ -151,10 +152,10 @@ body.hovering .cursor-outline {
   background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-2) 100%);
 }
 .hero-bg {
-  position: absolute; inset: -10%; /* For parallax */
-  background-image: url('https://images.unsplash.com/photo-1507692049791-de5e356812b3?w=1600&q=80');
+  position: absolute; inset: -10%;
+  background-image: url('https://images.unsplash.com/photo-1548625149-fc4a28cf4a38?w=1600&q=80'); /* Եկեղեցու նկար */
   background-size: cover; background-position: center;
-  opacity: 0.18; filter: saturate(.7) contrast(1.05);
+  opacity: 0.15; filter: saturate(.7) contrast(1.05);
 }
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
@@ -167,8 +168,8 @@ body.hovering .cursor-outline {
   position: relative;
 }
 .hero-ornament::before {
-  content: "✦"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  color: var(--champagne); font-size: 14px; background: var(--ivory); padding: 0 10px;
+  content: "🕊️"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  font-size: 16px; background: var(--ivory); padding: 0 10px;
 }
 .hero-label {
   font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 6px;
@@ -198,8 +199,8 @@ body.hovering .cursor-outline {
 }
 .scroll-hint {
   position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px;
-  color: var(--muted); text-transform: uppercase;
+  font-family: 'Noto Sans Armenian', sans-serif; font-size: 12px; letter-spacing: 2px;
+  color: var(--muted); 
   animation: bounce 2s ease-in-out infinite;
 }
 @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
@@ -226,7 +227,7 @@ section { position: relative; z-index: 2; padding: 120px 24px; }
   background: linear-gradient(90deg, transparent, var(--champagne), transparent);
 }
 
-/* --- Details Cards with Mouse Glow --- */
+/* --- Details Cards --- */
 .details { background: linear-gradient(180deg, var(--ivory-2) 0%, var(--ivory) 100%); }
 .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 40px; }
 .detail-card {
@@ -244,7 +245,6 @@ section { position: relative; z-index: 2; padding: 120px 24px; }
 }
 .detail-card:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(60, 45, 20, 0.15); }
 .detail-card:hover::before { transform: scaleX(1); }
-/* Mouse glow effect container */
 .detail-card .glow {
   position: absolute; width: 200px; height: 200px;
   background: radial-gradient(circle, rgba(212, 180, 106, 0.25), transparent 70%);
@@ -291,8 +291,8 @@ section { position: relative; z-index: 2; padding: 120px 24px; }
   -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1;
 }
 .cd-label {
-  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px;
-  color: var(--muted); text-transform: uppercase; margin-top: 10px;
+  font-family: 'Noto Sans Armenian', sans-serif; font-size: 11px; letter-spacing: 2px;
+  color: var(--muted); margin-top: 10px;
 }
 
 /* --- Timeline --- */
@@ -308,13 +308,15 @@ section { position: relative; z-index: 2; padding: 120px 24px; }
 }
 .tl-item:nth-child(even) { margin-left: 50%; text-align: left; }
 .tl-item::before {
-  content: ""; position: absolute; top: 30px;
-  width: 14px; height: 14px; border-radius: 50%;
-  background: var(--ivory); border: 2px solid var(--champagne);
+  content: "👼"; position: absolute; top: 24px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--ivory); 
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
   box-shadow: 0 0 0 4px rgba(201, 169, 106, 0.15);
 }
-.tl-item:nth-child(odd)::before { right: -7px; }
-.tl-item:nth-child(even)::before { left: -7px; }
+.tl-item:nth-child(odd)::before { right: -12px; }
+.tl-item:nth-child(even)::before { left: -12px; }
 .tl-time {
   font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 3px;
   color: var(--champagne-deep); margin-bottom: 8px;
@@ -330,7 +332,7 @@ section { position: relative; z-index: 2; padding: 120px 24px; }
   .tl-item, .tl-item:nth-child(even) {
     width: 100%; margin-left: 0; padding: 16px 16px 16px 50px; text-align: left;
   }
-  .tl-item::before, .tl-item:nth-child(odd)::before, .tl-item:nth-child(even)::before { left: 13px; right: auto; }
+  .tl-item::before, .tl-item:nth-child(odd)::before, .tl-item:nth-child(even)::before { left: 8px; right: auto; top: 20px;}
 }
 
 /* --- Location --- */
@@ -361,9 +363,8 @@ section { position: relative; z-index: 2; padding: 120px 24px; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 18px; border-radius: 30px;
-  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px;
-  text-transform: uppercase; text-decoration: none;
-  transition: all 0.4s ease; cursor: pointer; border: none;
+  font-family: 'Noto Sans Armenian', sans-serif; font-size: 11px; letter-spacing: 1px;
+  text-decoration: none; transition: all 0.4s ease; cursor: pointer; border: none;
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--champagne-deep), var(--gold));
@@ -391,8 +392,8 @@ section { position: relative; z-index: 2; padding: 120px 24px; }
 .rsvp-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .rsvp-btn {
   flex: 1; min-width: 180px; padding: 16px 24px;
-  border-radius: 40px; font-family: 'Cinzel', serif;
-  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  border-radius: 40px; font-family: 'Noto Sans Armenian', sans-serif;
+  font-size: 12px; letter-spacing: 1px; 
   cursor: pointer; transition: all 0.4s ease; border: none;
 }
 .rsvp-yes {
@@ -491,7 +492,7 @@ section { position: relative; z-index: 2; padding: 120px 24px; }
 footer {
   text-align: center; padding: 30px 24px;
   background: var(--ink); color: var(--pearl);
-  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px;
+  font-family: 'Noto Sans Armenian', sans-serif; font-size: 11px; letter-spacing: 2px;
 }
 footer span { color: var(--gold-light); }
 </style>
@@ -509,12 +510,12 @@ footer span { color: var(--gold-light); }
     <div class="candle"><div class="wick"></div></div>
   </div>
   <div class="intro-text">
-    <div class="small intro-anim">✦ Holy Baptism ✦</div>
-    <p class="intro-anim">With God's blessing and endless love,<br>we invite you to celebrate the Holy Baptism of our beloved children</p>
-    <div class="intro-names intro-anim">STELLA</div>
-    <div class="intro-names intro-anim">ARPI</div>
-    <div class="intro-names intro-anim">MICHAEL</div>
-    <button class="enter-btn intro-anim" onclick="enterSite()">Enter</button>
+    <div class="small intro-anim">✦ Սուրբ Մկրտություն ✦</div>
+    <p class="intro-anim">Աստծո օրհնությամբ և անսահման սիրով,<br>հրավիրում ենք ձեզ մասնակցելու մեր սիրելի երեխաների Սուրբ Մկրտության տոնակատարությանը</p>
+    <div class="intro-names intro-anim">ՍՏԵԼԼԱ</div>
+    <div class="intro-names intro-anim">ԱՐՓԻ</div>
+    <div class="intro-names intro-anim">ՄԻՔԱՅԵԼ</div>
+    <button class="enter-btn intro-anim" onclick="enterSite()">Մուտք</button>
   </div>
 </div>
 
@@ -526,51 +527,51 @@ footer span { color: var(--gold-light); }
   <div class="hero-bg" id="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-ornament"></div>
-    <div class="hero-label gs-reveal">Holy Baptism</div>
+    <div class="hero-label gs-reveal">Սուրբ Մկրտություն</div>
     <h1 class="hero-title gs-reveal">
-      Stella <span style="font-size:.5em">&</span> Arpi <span style="font-size:.5em">&</span> Michael
-      <span>A sacred day of grace and love</span>
+      Ստելլա <span style="font-size:.5em">&</span> Արփի <span style="font-size:.5em">&</span> Միքայել
+      <span>Շնորհքի և սիրո սուրբ օր</span>
     </h1>
     <div class="hero-names gs-reveal">
-      STELLA <span class="amp">&</span> ARPI <span class="amp">&</span> MICHAEL
+      ՍՏԵԼԼԱ <span class="amp">&</span> ԱՐՓԻ <span class="amp">&</span> ՄԻՔԱՅԵԼ
     </div>
     <div class="hero-date gs-reveal" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(18px,2.5vw,24px); color:var(--ink-soft); margin-top:24px;">
-      <strong style="font-style:normal; font-weight:500; color:var(--ink);">November 1</strong> · Saint Hovhannes Church, Abovyan
+      <strong style="font-style:normal; font-weight:500; color:var(--ink);">Նոյեմբերի 1</strong> · Սուրբ Հովհաննես եկեղեցի, Աբովյան
     </div>
   </div>
-  <div class="scroll-hint">Scroll</div>
+  <div class="scroll-hint">Իջեք ներքև ↓</div>
 </section>
 
 <!-- Details -->
 <section class="details">
   <div class="container">
     <div class="gs-reveal">
-      <div class="section-label">✦ The Celebration ✦</div>
-      <h2 class="section-title">Baptism Details</h2>
+      <div class="section-label">✦ Տոնակատարություն ✦</div>
+      <h2 class="section-title">Մկրտության Մանրամասներ</h2>
       <div class="divider"></div>
-      <p class="section-sub">Join us as we welcome our beloved children into the light of faith, surrounded by love and blessings.</p>
+      <p class="section-sub">Միացեք մեզ, երբ մեր սիրելի փոքրիկներին ընդունում ենք հավատքի լույսի ներքո՝ շրջապատված սիրով և օրհնությամբ։</p>
     </div>
     <div class="details-grid">
       <div class="detail-card gs-reveal-card">
         <div class="glow"></div>
         <div class="detail-icon">📅</div>
-        <h3>Date</h3>
-        <div class="value">November 1</div>
-        <div class="sub">Saturday, 2026</div>
+        <h3>Ամսաթիվ</h3>
+        <div class="value">Նոյեմբերի 1</div>
+        <div class="sub">Շաբաթ, 2026թ.</div>
       </div>
       <div class="detail-card gs-reveal-card">
         <div class="glow"></div>
         <div class="detail-icon">⛪</div>
-        <h3>Church Ceremony</h3>
-        <div class="value">Saint Hovhannes</div>
-        <div class="sub">Abovyan, Armenia</div>
+        <h3>Եկեղեցական արարողություն</h3>
+        <div class="value">Սուրբ Հովհաննես</div>
+        <div class="sub">Աբովյան, Հայաստան</div>
       </div>
       <div class="detail-card gs-reveal-card">
         <div class="glow"></div>
-        <div class="detail-icon">🍽</div>
-        <h3>Celebration</h3>
+        <div class="detail-icon">🎂</div>
+        <h3>Տոնական ընթրիք</h3>
         <div class="value">Original Restaurant</div>
-        <div class="sub">Dinner & rejoicing</div>
+        <div class="sub">Ընթրիք և ուրախություն</div>
       </div>
     </div>
   </div>
@@ -580,15 +581,15 @@ footer span { color: var(--gold-light); }
 <section class="countdown-section">
   <div class="container">
     <div class="gs-reveal">
-      <div class="section-label">✦ Save the Date ✦</div>
-      <h2 class="section-title">Until Our Special Day</h2>
+      <div class="section-label">✦ Նշեք ամսաթիվը ✦</div>
+      <h2 class="section-title">Մինչև մեր հատուկ օրը</h2>
       <div class="divider"></div>
     </div>
     <div class="countdown gs-reveal">
-      <div class="cd-box"><div class="cd-num" id="cd-d">00</div><div class="cd-label">Days</div></div>
-      <div class="cd-box"><div class="cd-num" id="cd-h">00</div><div class="cd-label">Hours</div></div>
-      <div class="cd-box"><div class="cd-num" id="cd-m">00</div><div class="cd-label">Minutes</div></div>
-      <div class="cd-box"><div class="cd-num" id="cd-s">00</div><div class="cd-label">Seconds</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-d">00</div><div class="cd-label">Օր</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-h">00</div><div class="cd-label">Ժամ</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-m">00</div><div class="cd-label">Րոպե</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-s">00</div><div class="cd-label">Վայրկյան</div></div>
     </div>
   </div>
 </section>
@@ -597,19 +598,19 @@ footer span { color: var(--gold-light); }
 <section class="timeline-section">
   <div class="container">
     <div class="gs-reveal">
-      <div class="section-label">✦ Order of the Day ✦</div>
-      <h2 class="section-title">Ceremony Timeline</h2>
+      <div class="section-label">✦ Օրվա ծրագիր ✦</div>
+      <h2 class="section-title">Արարողության ժամանակացույց</h2>
       <div class="divider"></div>
     </div>
     <div class="timeline">
       <div class="tl-item gs-reveal-tl">
-        <div class="tl-time">11:00</div>
-        <div class="tl-title">Holy Baptism Ceremony</div>
-        <div class="tl-loc">Saint Hovhannes Church</div>
+        <div class="tl-time">16:00</div>
+        <div class="tl-title">Սուրբ Մկրտության արարողություն</div>
+        <div class="tl-loc">Սուրբ Հովհաննես եկեղեցի</div>
       </div>
       <div class="tl-item gs-reveal-tl">
         <div class="tl-time">17:00</div>
-        <div class="tl-title">Celebration Dinner</div>
+        <div class="tl-title">Տոնական ընթրիք</div>
         <div class="tl-loc">Original Restaurant</div>
       </div>
     </div>
@@ -620,19 +621,20 @@ footer span { color: var(--gold-light); }
 <section class="location-section">
   <div class="container">
     <div class="gs-reveal">
-      <div class="section-label">✦ Venues ✦</div>
-      <h2 class="section-title">Locations</h2>
+      <div class="section-label">✦ Վայրեր ✦</div>
+      <h2 class="section-title">Վայրեր</h2>
       <div class="divider"></div>
     </div>
     <div class="loc-grid">
       <div class="loc-card gs-reveal-card">
+        <!-- images/church.jpg-->
         <div class="loc-img" style="background-image:url('https://images.unsplash.com/photo-1548625149-fc4a28cf4a38?w=800&q=80')"></div>
         <div class="loc-body">
-          <h3>⛪ Saint Hovhannes Church</h3>
-          <p>Abovyan, Armenia</p>
+          <h3>⛪ Սուրբ Հովհաննես եկեղեցի</h3>
+          <p>Աբովյան, Հայաստան</p>
           <div class="loc-btns">
-            <a class="btn btn-primary" href="https://maps.google.com/?q=Abovyan+Armenia" target="_blank">Open Location</a>
-            <a class="btn btn-ghost" href="https://maps.google.com/?daddr=Abovyan+Armenia" target="_blank">Get Directions</a>
+            <a class="btn btn-primary" href="https://maps.google.com/?q=Abovyan+Armenia" target="_blank">Բացել քարտեզը</a>
+            <a class="btn btn-ghost" href="https://maps.google.com/?daddr=Abovyan+Armenia" target="_blank">Ուղղություններ</a>
           </div>
         </div>
       </div>
@@ -640,10 +642,10 @@ footer span { color: var(--gold-light); }
         <div class="loc-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80')"></div>
         <div class="loc-body">
           <h3>🍽 Original Restaurant</h3>
-          <p>Celebration venue</p>
+          <p>Տոնական ընթրիքի վայր</p>
           <div class="loc-btns">
-            <a class="btn btn-primary" href="https://maps.google.com/?q=Original+Restaurant+Armenia" target="_blank">Open Location</a>
-            <a class="btn btn-ghost" href="https://maps.google.com/?daddr=Original+Restaurant+Armenia" target="_blank">Get Directions</a>
+            <a class="btn btn-primary" href="https://maps.google.com/?q=Original+Restaurant+Armenia" target="_blank">Բացել քարտեզը</a>
+            <a class="btn btn-ghost" href="https://maps.google.com/?daddr=Original+Restaurant+Armenia" target="_blank">Ուղղություններ</a>
           </div>
         </div>
       </div>
@@ -655,27 +657,27 @@ footer span { color: var(--gold-light); }
 <section class="rsvp-section">
   <div class="container">
     <div class="gs-reveal">
-      <div class="section-label">✦ Kindly Respond ✦</div>
-      <h2 class="section-title">RSVP</h2>
+      <div class="section-label">✦ Սիրալիր պատասխան ✦</div>
+      <h2 class="section-title">Հաստատում</h2>
       <div class="divider"></div>
     </div>
     <div class="rsvp-box gs-reveal">
       <div id="rsvp-form">
-        <p>Will you join us on this blessed day?</p>
+        <p>Մի՞թե կմիանաք մեզ այս օրհնյալ օրը:</p>
         <div class="rsvp-btns">
-          <button class="rsvp-btn rsvp-yes" onclick="rsvp(true)">✓ We will attend</button>
-          <button class="rsvp-btn rsvp-no" onclick="rsvp(false)">✕ Cannot attend</button>
+          <button class="rsvp-btn rsvp-yes" onclick="rsvp(true)">✓ Մենք կմասնակցենք</button>
+          <button class="rsvp-btn rsvp-no" onclick="rsvp(false)">✕ Ցավոք, չենք կարողանա</button>
         </div>
       </div>
       <div class="thank-you" id="thank-you-yes">
         <div class="check-icon">✓</div>
-        <h3>Thank You</h3>
-        <p>Your presence will bless our celebration. We look forward to sharing this sacred day with you.</p>
+        <h3>Շնորհակալություն</h3>
+        <p>Ձեր ներկայությունը կօրհնի մեր տոնակատարությունը: Անհամբեր սպասում ենք այս սուրբ օրը ձեզ հետ կիսելու:</p>
       </div>
       <div class="thank-you" id="thank-you-no">
         <div class="check-icon" style="background:linear-gradient(135deg,#8a7e6a,#b8a98a)">✕</div>
-        <h3>We Understand</h3>
-        <p>You will be in our hearts and prayers on this blessed day. Thank you for your love.</p>
+        <h3>Հասկանում ենք</h3>
+        <p>Դուք մեր սրտում և աղոթքներում կլինեք այս օրհնյալ օրը: Շնորհակալություն ձեր սիրո համար:</p>
       </div>
     </div>
   </div>
@@ -685,23 +687,23 @@ footer span { color: var(--gold-light); }
 <section class="gallery-section">
   <div class="container">
     <div class="gs-reveal">
-      <div class="section-label">✦ Cherished Moments ✦</div>
-      <h2 class="section-title">Memories</h2>
+      <div class="section-label">✦ Թանկարժեք պահեր ✦</div>
+      <h2 class="section-title">Հիշողություններ</h2>
       <div class="divider"></div>
-      <p class="section-sub">A glimpse of the little ones we celebrate today.</p>
+      <p class="section-sub">Մի փոքրիկ ակնարկ այն փոքրիկներից, ում այսօր տոնում ենք:</p>
     </div>
     <div class="gallery">
       <div class="gallery-item gs-reveal-card" onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80" alt="Memory 1">
+        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80" alt="Հիշողություն 1">
       </div>
       <div class="gallery-item gs-reveal-card" onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80" alt="Memory 2">
+        <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80" alt="Հիշողություն 2">
       </div>
       <div class="gallery-item gs-reveal-card" onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80" alt="Memory 3">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80" alt="Հիշողություն 3">
       </div>
       <div class="gallery-item gs-reveal-card" onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80" alt="Memory 4">
+        <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80" alt="Հիշողություն 4">
       </div>
     </div>
   </div>
@@ -715,13 +717,13 @@ footer span { color: var(--gold-light); }
       <circle cx="30" cy="30" r="26" stroke-opacity=".3"/>
     </svg>
     <p class="final-text gs-reveal">
-      "Your presence will make this blessed day even more special.<br>
-      With love, we are waiting for you."
+      "Ձեր ներկայությունն այս օրհնյալ օրը կդարձնի ավելի հատուկ:<br>
+      Սիրով սպասում ենք ձեզ:"
     </p>
-    <div class="final-sign gs-reveal">— With Love & Blessings —</div>
+    <div class="final-sign gs-reveal">— Սիրով և օրհնությամբ —</div>
     <div class="final-actions gs-reveal">
-      <button class="btn btn-primary" onclick="shareInvite()">✦ Share Invitation</button>
-      <button class="btn btn-ghost" onclick="addToCalendar()">📅 Add to Calendar</button>
+      <button class="btn btn-primary" onclick="shareInvite()">✦ Կիսվել հրավիրատոմսով</button>
+      <button class="btn btn-ghost" onclick="addToCalendar()">📅 Ավելացնել օրացույց</button>
     </div>
   </div>
 </section>
@@ -732,19 +734,20 @@ footer span { color: var(--gold-light); }
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<!-- Music -->
-<button class="music-toggle" id="music-toggle" onclick="toggleMusic()" title="Toggle music">
+<!-- Music (Hallelujah Piano) -->
+<button class="music-toggle" id="music-toggle" onclick="toggleMusic()" title="Միացնել/Անջատել երաժշտությունը">
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
     <path d="M9 18V5l12-2v13"/>
     <circle cx="6" cy="18" r="3"/>
     <circle cx="18" cy="16" r="3"/>
   </svg>
 </button>
+<!-- Hallelujah instrumental music -->
 <audio id="bg-music" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=relaxing-mountains-rivers-streams-running-water-18178.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_24919a3c1d.mp3?filename=hallelujah-piano-version-124032.mp3" type="audio/mpeg">
 </audio>
 
-<footer>✦ <span>STELLA · ARPI · MICHAEL</span> ✦ NOVEMBER 1, 2026 ✦</footer>
+<footer>✦ <span>ՍՏԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱՅԵԼ</span> ✦ ՆՈՅԵՄԲԵՐԻ 1, 2026 ✦</footer>
 
 <script>
 // --- Custom Cursor Logic ---
@@ -754,50 +757,36 @@ const cursorOutline = document.querySelector('.cursor-outline');
 window.addEventListener('mousemove', (e) => {
   const posX = e.clientX;
   const posY = e.clientY;
-
   cursorDot.style.left = `${posX}px`;
   cursorDot.style.top = `${posY}px`;
-
-  // Add slight delay to outline for smooth feel
-  cursorOutline.animate({
-    left: `${posX}px`,
-    top: `${posY}px`
-  }, { duration: 500, fill: "forwards" });
+  cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
 });
 
-// Hover effect for interactive elements
 const interactiveElements = document.querySelectorAll('a, button, .detail-card, .loc-card, .gallery-item');
 interactiveElements.forEach(el => {
   el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
   el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
 });
 
-// --- Mouse Glow Effect on Cards ---
 document.querySelectorAll('.detail-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
     const glow = card.querySelector('.glow');
-    glow.style.left = `${x}px`;
-    glow.style.top = `${y}px`;
+    glow.style.left = `${e.clientX - rect.left}px`;
+    glow.style.top = `${e.clientY - rect.top}px`;
   });
 });
 
 // --- Intro Animation ---
 function enterSite() {
   gsap.to('#intro', {
-    opacity: 0,
-    duration: 1.5,
-    ease: "power2.inOut",
+    opacity: 0, duration: 1.5, ease: "power2.inOut",
     onComplete: () => {
       document.getElementById('intro').style.display = 'none';
       document.body.style.overflow = 'auto';
-      initScrollAnimations(); // Start scroll animations after intro
+      initScrollAnimations();
     }
   });
-  
-  // Try to play music
   try {
     document.getElementById('bg-music').play().then(() => {
       document.getElementById('music-toggle').classList.add('playing');
@@ -805,15 +794,8 @@ function enterSite() {
   } catch(e) {}
 }
 
-// Animate intro elements on load
 window.addEventListener('load', () => {
-  gsap.to('.intro-anim', {
-    y: 0,
-    opacity: 1,
-    duration: 1.2,
-    stagger: 0.3,
-    ease: "power3.out"
-  });
+  gsap.to('.intro-anim', { y: 0, opacity: 1, duration: 1.2, stagger: 0.3, ease: "power3.out" });
 });
 document.body.style.overflow = 'hidden';
 
@@ -836,36 +818,16 @@ document.body.style.overflow = 'hidden';
 // --- GSAP Scroll Animations ---
 function initScrollAnimations() {
   gsap.registerPlugin(ScrollTrigger);
-
-  // General reveal
   gsap.utils.toArray('.gs-reveal').forEach(elem => {
-    gsap.from(elem, {
-      scrollTrigger: { trigger: elem, start: "top 85%", toggleActions: "play none none reverse" },
-      y: 40, opacity: 0, duration: 1, ease: "power3.out"
-    });
+    gsap.from(elem, { scrollTrigger: { trigger: elem, start: "top 85%", toggleActions: "play none none reverse" }, y: 40, opacity: 0, duration: 1, ease: "power3.out" });
   });
-
-  // Staggered cards
   gsap.utils.toArray('.gs-reveal-card').forEach((elem, i) => {
-    gsap.from(elem, {
-      scrollTrigger: { trigger: elem, start: "top 85%", toggleActions: "play none none reverse" },
-      y: 50, opacity: 0, duration: 0.8, delay: i * 0.1, ease: "power3.out"
-    });
+    gsap.from(elem, { scrollTrigger: { trigger: elem, start: "top 85%", toggleActions: "play none none reverse" }, y: 50, opacity: 0, duration: 0.8, delay: i * 0.1, ease: "power3.out" });
   });
-
-  // Timeline items
   gsap.utils.toArray('.gs-reveal-tl').forEach((elem, i) => {
-    gsap.from(elem, {
-      scrollTrigger: { trigger: elem, start: "top 80%", toggleActions: "play none none reverse" },
-      x: i % 2 === 0 ? -40 : 40, opacity: 0, duration: 0.8, ease: "power3.out"
-    });
+    gsap.from(elem, { scrollTrigger: { trigger: elem, start: "top 80%", toggleActions: "play none none reverse" }, x: i % 2 === 0 ? -40 : 40, opacity: 0, duration: 0.8, ease: "power3.out" });
   });
-
-  // Parallax Hero Background
-  gsap.to('#hero-bg', {
-    scrollTrigger: { trigger: '.hero', start: "top top", end: "bottom top", scrub: true },
-    y: 100, ease: "none"
-  });
+  gsap.to('#hero-bg', { scrollTrigger: { trigger: '.hero', start: "top top", end: "bottom top", scrub: true }, y: 100, ease: "none" });
 }
 
 // --- Countdown ---
@@ -898,9 +860,7 @@ function openLightbox(el) {
   document.getElementById('lightbox').classList.add('show');
   gsap.from('#lightbox-img', { scale: 0.9, opacity: 0, duration: 0.4, ease: "power2.out" });
 }
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('show');
-}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('show'); }
 
 // --- Music ---
 function toggleMusic() {
@@ -912,17 +872,17 @@ function toggleMusic() {
 
 // --- Share & Calendar ---
 function shareInvite() {
-  const data = { title: 'Holy Baptism — Stella, Arpi & Michael', text: 'With God\'s blessing, we invite you to celebrate the Holy Baptism of our beloved children. November 1, 2026.', url: location.href };
+  const data = { title: 'Սուրբ Մկրտություն — Ստելլա, Արփի և Միքայել', text: 'Աստծո օրհնությամբ հրավիրում ենք ձեզ մասնակցելու մեր սիրելի երեխաների Սուրբ Մկրտությանը: Նոյեմբերի 1, 2026թ.', url: location.href };
   if(navigator.share) { navigator.share(data).catch(() => {}); }
-  else { navigator.clipboard.writeText(location.href).then(() => alert('Invitation link copied to clipboard ✦')); }
+  else { navigator.clipboard.writeText(location.href).then(() => alert('Հրավիրատոմսի հղումը պատճենված է ✦')); }
 }
 
 function addToCalendar() {
   const start = '20261101T070000Z'; 
   const end = '20261101T090000Z';
-  const title = 'Holy Baptism — Stella, Arpi & Michael';
-  const details = 'Church ceremony at Saint Hovhannes Church, Abovyan. Celebration dinner at Original Restaurant.';
-  const location = 'Saint Hovhannes Church, Abovyan, Armenia';
+  const title = 'Սուրբ Մկրտություն — Ստելլա, Արփի և Միքայել';
+  const details = 'Եկեղեցական արարողություն՝ Սուրբ Հովհաննես եկեղեցի, Աբովյան: Տոնական ընթրիք՝ Original Restaurant:';
+  const location = 'Սուրբ Հովհաննես եկեղեցի, Աբովյան, Հայաստան';
   window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`, '_blank');
 }
 </script>
