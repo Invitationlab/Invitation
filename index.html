@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ստելլա • Արփի • Միքայել — Սուրբ Մկրտություն</title>
-<meta name="description" content="իրով հրավիրում ենք մեր երեխաների՝ Ստելլայի, Արփիի և Միքայելի սուրբ մկրտության արարողությանը։" />
+<meta name="description" content="իրով հրավիրում ենք մեր երեխաների՝ տելլայի, Արփիի և Միքայելի սուրբ մկրտության արարողությանը։" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,9 +95,9 @@ a { text-decoration: none; color: inherit; }
   100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    HERO SECTION - WITH CHILDREN BACKGROUND
-   ══════════════════════════════════════════ */
+   ═════════════════════════════════════════ */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -111,7 +111,7 @@ a { text-decoration: none; color: inherit; }
 .hero-bg-image {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1920&q=85');
+  background-image: url('children.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -219,7 +219,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-divider::before {
-  content: "✦";
+  content: "";
   position: absolute;
   left: 50%; top: 50%;
   transform: translate(-50%, -50%);
@@ -252,7 +252,7 @@ a { text-decoration: none; color: inherit; }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    SECTION BASE
    ══════════════════════════════════════════ */
 section {
@@ -625,7 +625,7 @@ section {
   }
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    QUOTE SECTION
    ═════════════════════════════════════════ */
 .quote-section {
@@ -652,6 +652,43 @@ section {
 }
 
 /* ═══════════════════════════════════════════
+   MUSIC TOGGLE BUTTON
+   ═══════════════════════════════════════════ */
+.music-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--champagne-deep), var(--champagne));
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(200, 169, 106, 0.4);
+  transition: all 0.5s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(200, 169, 106, 0.6);
+}
+
+.music-toggle.playing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */
 footer {
@@ -718,6 +755,12 @@ footer .names {
 <div class="flower">🌹</div>
 <div class="flower">🌿</div>
 
+<!-- Hidden YouTube Player for Music -->
+<div id="yt-player" style="position: absolute; top: -9999px; left: -9999px;"></div>
+
+<!-- Music Toggle Button -->
+<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Միացնել/Անջատել երաժշտությունը">🎵</button>
+
 <!-- ═════════════════════════════════════════
      HERO SECTION - WITH CHILDREN BACKGROUND
      ═══════════════════════════════════════════ -->
@@ -726,10 +769,10 @@ footer .names {
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-cross">✝</div>
-    <div class="hero-label">Սուրբ կրտություն</div>
+    <div class="hero-label">Սուրբ Մկրտություն</div>
     <h1 class="hero-title">Օրհնությամբ սկսվող նոր ճանապարհ</h1>
     <p class="hero-subtitle">Սիրով հրավիրում ենք մասնակցելու մեր երեխաների սուրբ մկրտության արարողությանը</p>
-    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐՓԻ • ԻՔԱՅԵԼ</div>
+    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐԻ • ՄԻՔԱՅԵԼ</div>
     <div class="hero-date">01.11.2026</div>
     <div class="hero-divider"></div>
   </div>
@@ -753,11 +796,11 @@ footer .names {
 
 <!-- ═══════════════════════════════════════════
      CEREMONY & CELEBRATION CARDS
-     ═══════════════════════════════════════════ -->
+     ══════════════════════════════════════════ -->
 <section class="details">
   <div class="container">
     <div class="section-label">✦ Արարողություն ✦</div>
-    <h2 class="section-title">կրտության մանրամասներ</h2>
+    <h2 class="section-title">Մկրտության մանրամասներ</h2>
     <div class="divider"></div>
 
     <div class="cards-grid">
@@ -766,8 +809,8 @@ footer .names {
         <span class="event-icon">✝</span>
         <h3>Սուրբ Մկրտության Արարողություն</h3>
         <div class="event-detail">
-          <span class="icon"></span>
-          <strong>01 ոյեմբերի, 2026</strong>
+          <span class="icon">📅</span>
+          <strong>01 Նոյեմբերի, 2026</strong>
         </div>
         <div class="event-detail">
           <span class="icon">🕒</span>
@@ -803,19 +846,19 @@ footer .names {
      ═══════════════════════════════════════════ -->
 <section class="timeline-section">
   <div class="container">
-    <div class="section-label">✦ Օրվա Ծրագիր ✦</div>
+    <div class="section-label">✦ Օրվա Ծրագիր </div>
     <h2 class="section-title">Ժամանակացույց</h2>
     <div class="divider"></div>
 
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-time">15:45</div>
-        <div class="tl-title">Սուրբ Մկրտություն</div>
-        <div class="tl-loc">Սուրբ Հովհաննես Եկեղեցի</div>
+        <div class="tl-title">ուրբ Մկրտություն</div>
+        <div class="tl-loc">ուրբ Հովհաննես կեղեցի</div>
       </div>
       <div class="tl-item">
         <div class="tl-time">17:00</div>
-        <div class="tl-title">Տոնական նթրիք</div>
+        <div class="tl-title">Տոնական Ընթրիք</div>
         <div class="tl-loc">Original Restaurant</div>
       </div>
     </div>
@@ -827,13 +870,13 @@ footer .names {
      ═══════════════════════════════════════════ -->
 <section class="gallery-section">
   <div class="container">
-    <div class="section-label">✦ Գեղեցիկ Պահեր ✦</div>
+    <div class="section-label">✦ Գեղեցիկ Պահեր </div>
     <h2 class="section-title">Մկրտության Գեղեցկությունը</h2>
     <div class="divider"></div>
 
     <div class="gallery">
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&q=85" alt="Մկրտության արարողություն">
+        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&q=85" alt="կրտության արարողություն">
       </div>
       <div class="gallery-item">
         <img src="https://images.unsplash.com/photo-1548625149-fc4a28cf4a38?w=600&q=85" alt="Սպիտակ եկեղեցի">
@@ -842,13 +885,13 @@ footer .names {
         <img src="https://images.unsplash.com/photo-1507692049791-de5e356812b3?w=600&q=85" alt="ոմեր">
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=85" alt="պիտակ վարդեր">
+        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=85" alt="Սպիտակ վարդեր">
       </div>
       <div class="gallery-item">
         <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=85" alt="Մանուկ">
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600&q=85" alt="Ոսկե աչ">
+        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600&q=85" alt="Ոսկե խաչ">
       </div>
     </div>
   </div>
@@ -871,9 +914,63 @@ footer .names {
 <footer>
   <div class="footer-ornament">✦ ✦ ✦</div>
   <p>Օրհնությամբ և սիրով պատրաստված</p>
-  <p>ուրբ Մկրտություն · 2026</p>
-  <div class="names">ՍՏԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱՅԵ</div>
+  <p>Սուրբ Մկրտություն · 2026</p>
+  <div class="names">ՍՏԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱՅԵԼ</div>
 </footer>
+
+<!-- YouTube IFrame API -->
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+var isPlaying = false;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('yt-player', {
+    height: '0',
+    width: '0',
+    videoId: '0COdq1IT5Hc',
+    playerVars: {
+      'autoplay': 0,
+      'controls': 0,
+      'disablekb': 1,
+      'fs': 0,
+      'modestbranding': 1,
+      'rel': 0,
+      'loop': 1,
+      'playlist': '0COdq1IT5Hc'
+    },
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  player.setVolume(50);
+}
+
+function toggleMusic() {
+  if (!player) return;
+  
+  var toggleBtn = document.getElementById('musicToggle');
+  
+  if (isPlaying) {
+    player.pauseVideo();
+    toggleBtn.classList.remove('playing');
+    toggleBtn.innerHTML = '🎵';
+  } else {
+    player.playVideo();
+    toggleBtn.classList.add('playing');
+    toggleBtn.innerHTML = '🔇';
+  }
+  
+  isPlaying = !isPlaying;
+}
+</script>
 
 </body>
 </html>
