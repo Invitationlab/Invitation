@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,190 +11,139 @@
 
 <style>
 
+/* =========================
+   PREMIUM BAPTISM INVITATION
+========================= */
+
+
+:root{
+--ivory:#F9F6F1;
+--beige:#E9DFD2;
+--blush:#F6E8EA;
+--sage:#DCE5D8;
+--gold:#C8A96A;
+--text:#5c5145;
+}
+
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
+
 body{
-background:#f9f5ed;
-color:#4b4438;
+
 font-family:'Poppins',sans-serif;
+background:var(--ivory);
+color:var(--text);
 overflow-x:hidden;
-}
 
-.container{
-max-width:600px;
-margin:auto;
-padding:30px 20px;
-text-align:center;
-position:relative;
 }
 
 
-/* Floating flowers */
+h1,h2,h3{
 
-.flower{
-position:fixed;
-font-size:30px;
-opacity:.25;
-animation:float 8s infinite ease-in-out;
-}
+font-family:'Playfair Display',serif;
 
-.flower.one{
-top:10%;
-left:5%;
-}
-
-.flower.two{
-bottom:15%;
-right:5%;
-animation-delay:3s;
-}
-
-@keyframes float{
-0%,100%{
-transform:translateY(0);
-}
-50%{
-transform:translateY(-30px);
-}
 }
 
 
-/* Hero */
+/* HERO */
 
 .hero{
-padding-top:60px;
-animation:fade 2s ease;
+
+height:100vh;
+min-height:700px;
+
+background:
+linear-gradient(
+rgba(40,35,30,.45),
+rgba(40,35,30,.45)
+),
+url("https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+color:white;
+
 }
+
+
+.hero-content{
+
+max-width:650px;
+padding:30px;
+
+animation:fadeUp 1.5s ease;
+
+}
+
 
 .logo{
+
 letter-spacing:5px;
 font-size:13px;
-color:#b99b55;
+color:#f8dfaa;
+
 }
 
-h1{
-font-family:'Playfair Display';
-font-size:42px;
+
+.hero h1{
+
+font-size:65px;
 margin:25px 0;
-color:#8d7340;
-}
-
-.baby{
-font-family:'Playfair Display';
-font-size:38px;
-margin:20px 0;
-color:#6e6048;
-}
-
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:none;
-}
-}
-
-
-/* Glass cards */
-
-.card{
-
-background:rgba(255,255,255,.65);
-backdrop-filter:blur(12px);
-border-radius:25px;
-padding:30px 20px;
-margin:25px 0;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-animation:fade 1.5s ease;
 
 }
 
 
-.title{
+.hero p{
 
-font-family:'Playfair Display';
-font-size:28px;
-color:#967942;
-margin-bottom:15px;
+font-size:18px;
+line-height:1.8;
 
 }
 
 
 .gold{
-color:#b99b55;
-font-weight:600;
-}
 
-
-
-/* Timeline */
-
-
-.timeline div{
-
-margin:25px 0;
-font-size:16px;
+color:var(--gold);
 
 }
 
 
-.arrow{
-font-size:25px;
-color:#c5a45d;
-}
-
-
-/* Gallery */
-
-
-.gallery{
-
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-
-}
-
-
-.gallery div{
-
-height:130px;
-background:#eee3d0;
-border-radius:20px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:40px;
-
-}
-
-
-
-/* Buttons */
+/* BUTTON */
 
 .btn{
 
-display:block;
-margin:15px auto;
-padding:15px 25px;
-border-radius:40px;
-text-decoration:none;
-background:linear-gradient(135deg,#d6bd7a,#a9873f);
+display:inline-block;
+margin:25px 8px;
+padding:15px 35px;
+
+border-radius:50px;
+
+background:
+linear-gradient(135deg,#d8bd7c,#b28b43);
+
 color:white;
-font-weight:500;
-box-shadow:0 10px 25px rgba(180,140,60,.3);
-transition:.3s;
+text-decoration:none;
+
+font-size:14px;
+
+transition:.4s;
+
+box-shadow:
+0 15px 30px rgba(0,0,0,.2);
 
 }
+
 
 .btn:hover{
 
@@ -202,14 +152,193 @@ transform:translateY(-5px);
 }
 
 
-.footer{
 
-padding:40px 20px;
-font-family:'Playfair Display';
-font-size:22px;
+/* MAIN */
+
+.container{
+
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
 
 }
 
+
+
+.card{
+
+background:rgba(255,255,255,.7);
+
+backdrop-filter:blur(15px);
+
+border-radius:30px;
+
+padding:45px;
+
+margin-bottom:50px;
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.08);
+
+text-align:center;
+
+}
+
+
+.title{
+
+font-size:36px;
+color:#9b7b43;
+margin-bottom:25px;
+
+}
+
+
+
+.info{
+
+font-size:18px;
+line-height:2;
+
+}
+
+
+
+/* TIMELINE */
+
+
+.timeline{
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+
+}
+
+
+.step{
+
+background:white;
+padding:30px;
+border-radius:25px;
+
+width:260px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+}
+
+
+
+/* GALLERY */
+
+
+.gallery{
+
+columns:3;
+column-gap:20px;
+
+}
+
+
+.gallery img{
+
+width:100%;
+border-radius:25px;
+margin-bottom:20px;
+
+transition:.5s;
+
+}
+
+
+.gallery img:hover{
+
+transform:scale(1.03);
+
+}
+
+
+
+/* FOOTER */
+
+
+.footer{
+
+text-align:center;
+
+font-family:'Playfair Display';
+
+font-size:28px;
+
+padding:50px 20px;
+
+}
+
+
+
+/* ANIMATION */
+
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:none;
+
+}
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:700px){
+
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+
+.gallery{
+
+columns:2;
+
+}
+
+
+.card{
+
+padding:30px 20px;
+
+}
+
+
+.title{
+
+font-size:28px;
+
+}
+
+
+}
 
 </style>
 
@@ -219,15 +348,12 @@ font-size:22px;
 <body>
 
 
-<div class="flower one">🌸</div>
-<div class="flower two">🌿</div>
-
-
-
-<div class="container">
-
 
 <section class="hero">
+
+
+<div class="hero-content">
+
 
 <div class="logo">
 EVERINVITE PRESENTS
@@ -239,17 +365,20 @@ Holy Baptism
 </h1>
 
 
-<div class="baby">
-Stella • Arpi • Michael
-</div>
-
-
 <p>
-With love and gratitude,<br><br>
+With love and gratitude<br><br>
 
-We joyfully invite you to celebrate<br>
-the Holy Baptism of our beloved children.
+We joyfully invite you to celebrate the Holy Baptism of our beloved children
+
 </p>
+
+
+<h2 class="gold">
+Stella • Arpi • Michael
+</h2>
+
+
+</div>
 
 
 </section>
@@ -257,30 +386,30 @@ the Holy Baptism of our beloved children.
 
 
 
+
+<div class="container">
+
+
+
 <div class="card">
 
-<div class="title">
+
+<h2 class="title">
 ✝️ Baptism Ceremony
-</div>
+</h2>
 
 
-<p>
-<span class="gold">Date</span><br>
-November 1, 2026
-</p>
+<div class="info">
 
-<br>
+📅 November 1, 2026<br><br>
 
-<p>
 ⛪ Holy Hovhannes Church<br>
-📍 Abovyan
-</p>
 
-<br>
+📍 Abovyan<br><br>
 
-<p>
 🕒 15:45
-</p>
+
+</div>
 
 
 </div>
@@ -291,28 +420,23 @@ November 1, 2026
 
 <div class="card">
 
-<div class="title">
+
+<h2 class="title">
 🍽 Celebration
+</h2>
+
+
+<div class="info">
+
+Original Restaurant<br><br>
+
+🕔 17:00<br><br>
+
+
+Join us for dinner, love,
+laughter and unforgettable memories.
+
 </div>
-
-
-<p>
-📍 Original Restaurant
-</p>
-
-<br>
-
-<p>
-🕔 17:00
-</p>
-
-
-<br>
-
-<p>
-Join us for dinner, love, laughter,<br>
-and unforgettable memories.
-</p>
 
 
 </div>
@@ -324,35 +448,42 @@ and unforgettable memories.
 
 <div class="card">
 
-<div class="title">
+
+<h2 class="title">
 🤍 Program
-</div>
+</h2>
+
 
 
 <div class="timeline">
 
 
-<div>
-<b>15:45</b><br>
+<div class="step">
+
+<h3>15:45</h3>
+
+<p>
 ✝️ Holy Baptism Ceremony
-</div>
-
-
-<div class="arrow">
-↓
-</div>
-
-
-<div>
-<b>17:00</b><br>
-🥂 Celebration at Original Restaurant
-</div>
-
+</p>
 
 </div>
 
+
+<div class="step">
+
+<h3>17:00</h3>
+
+<p>
+🥂 Celebration Dinner
+</p>
+
 </div>
 
+
+</div>
+
+
+</div>
 
 
 
@@ -362,19 +493,32 @@ and unforgettable memories.
 <div class="card">
 
 
-<div class="title">
+<h2 class="title">
 🌸 Gallery
-</div>
+</h2>
+
 
 
 <div class="gallery">
 
-<div>🕊</div>
-<div>✝️</div>
-<div>🕯</div>
-<div>🤍</div>
-<div>👟</div>
-<div>📖</div>
+
+<img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=800&q=80">
+
+
+<img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80">
+
+
+<img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80">
+
+
+<img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=800&q=80">
+
+
+<img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=800&q=80">
+
+
+<img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80">
+
 
 </div>
 
@@ -385,34 +529,38 @@ and unforgettable memories.
 
 
 
-
-
-<div class="card footer">
-
+<div class="footer">
 
 Your presence will be the greatest gift<br>
-to our family.
+
+to our family 🤍
 
 <br><br>
 
 We look forward to celebrating<br>
 this special day together.
 
-
 </div>
 
 
 
 
 
-<a class="btn" href="YOUR_CHURCH_LINK" target="_blank">
+<div style="text-align:center">
+
+
+<a class="btn" href="YOUR_CHURCH_GOOGLE_MAPS_LINK">
 ⛪ Open Church Location
 </a>
 
 
-<a class="btn" href="YOUR_RESTAURANT_LINK" target="_blank">
+
+<a class="btn" href="YOUR_RESTAURANT_GOOGLE_MAPS_LINK">
 🍽 Open Restaurant Location
 </a>
+
+
+</div>
 
 
 
