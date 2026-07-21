@@ -1,44 +1,423 @@
-IMPORTANT:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-Do NOT use placeholder boxes.
+<title>Holy Baptism Invitation</title>
 
-Instead, use high-quality royalty-free images from Unsplash using direct image URLs that match the invitation theme.
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-Make the website look like a premium template marketplace similar to Canva, Etsy, or Minted.
+<style>
 
-Use a luxury color palette:
-- Ivory (#F9F6F1)
-- Beige (#E9DFD2)
-- Blush (#F6E8EA)
-- Sage (#DCE5D8)
-- Gold (#C8A96A)
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-Use CSS Grid and Flexbox.
+body{
+background:#f9f5ed;
+color:#4b4438;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+}
 
-Create premium-looking cards with:
-- Glassmorphism
-- Soft shadows
-- Rounded corners (20px)
-- Elegant hover lift effect
-- Image zoom on hover
+.container{
+max-width:600px;
+margin:auto;
+padding:30px 20px;
+text-align:center;
+position:relative;
+}
 
-Buttons should have:
-- Gold gradient
-- Smooth transitions
-- Premium hover animation
 
-The hero section should include:
-- Full-width luxury background image
-- Dark overlay
-- Centered content
-- Beautiful typography
+/* Floating flowers */
 
-The gallery should be arranged in a modern masonry or responsive grid layout.
+.flower{
+position:fixed;
+font-size:30px;
+opacity:.25;
+animation:float 8s infinite ease-in-out;
+}
 
-Every section must have generous white space.
+.flower.one{
+top:10%;
+left:5%;
+}
 
-Use subtle CSS animations only (hover, transitions, gradients). No JavaScript.
+.flower.two{
+bottom:15%;
+right:5%;
+animation-delay:3s;
+}
 
-Write clean, professional code with comments.
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-30px);
+}
+}
 
-The final result should look like a premium commercial landing page ready for production.
+
+/* Hero */
+
+.hero{
+padding-top:60px;
+animation:fade 2s ease;
+}
+
+.logo{
+letter-spacing:5px;
+font-size:13px;
+color:#b99b55;
+}
+
+h1{
+font-family:'Playfair Display';
+font-size:42px;
+margin:25px 0;
+color:#8d7340;
+}
+
+.baby{
+font-family:'Playfair Display';
+font-size:38px;
+margin:20px 0;
+color:#6e6048;
+}
+
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:none;
+}
+}
+
+
+/* Glass cards */
+
+.card{
+
+background:rgba(255,255,255,.65);
+backdrop-filter:blur(12px);
+border-radius:25px;
+padding:30px 20px;
+margin:25px 0;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+animation:fade 1.5s ease;
+
+}
+
+
+.title{
+
+font-family:'Playfair Display';
+font-size:28px;
+color:#967942;
+margin-bottom:15px;
+
+}
+
+
+.gold{
+color:#b99b55;
+font-weight:600;
+}
+
+
+
+/* Timeline */
+
+
+.timeline div{
+
+margin:25px 0;
+font-size:16px;
+
+}
+
+
+.arrow{
+font-size:25px;
+color:#c5a45d;
+}
+
+
+/* Gallery */
+
+
+.gallery{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+
+}
+
+
+.gallery div{
+
+height:130px;
+background:#eee3d0;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:40px;
+
+}
+
+
+
+/* Buttons */
+
+.btn{
+
+display:block;
+margin:15px auto;
+padding:15px 25px;
+border-radius:40px;
+text-decoration:none;
+background:linear-gradient(135deg,#d6bd7a,#a9873f);
+color:white;
+font-weight:500;
+box-shadow:0 10px 25px rgba(180,140,60,.3);
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+.footer{
+
+padding:40px 20px;
+font-family:'Playfair Display';
+font-size:22px;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="flower one">🌸</div>
+<div class="flower two">🌿</div>
+
+
+
+<div class="container">
+
+
+<section class="hero">
+
+<div class="logo">
+EVERINVITE PRESENTS
+</div>
+
+
+<h1>
+Holy Baptism
+</h1>
+
+
+<div class="baby">
+Stella • Arpi • Michael
+</div>
+
+
+<p>
+With love and gratitude,<br><br>
+
+We joyfully invite you to celebrate<br>
+the Holy Baptism of our beloved children.
+</p>
+
+
+</section>
+
+
+
+
+<div class="card">
+
+<div class="title">
+✝️ Baptism Ceremony
+</div>
+
+
+<p>
+<span class="gold">Date</span><br>
+November 1, 2026
+</p>
+
+<br>
+
+<p>
+⛪ Holy Hovhannes Church<br>
+📍 Abovyan
+</p>
+
+<br>
+
+<p>
+🕒 15:45
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<div class="title">
+🍽 Celebration
+</div>
+
+
+<p>
+📍 Original Restaurant
+</p>
+
+<br>
+
+<p>
+🕔 17:00
+</p>
+
+
+<br>
+
+<p>
+Join us for dinner, love, laughter,<br>
+and unforgettable memories.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<div class="title">
+🤍 Program
+</div>
+
+
+<div class="timeline">
+
+
+<div>
+<b>15:45</b><br>
+✝️ Holy Baptism Ceremony
+</div>
+
+
+<div class="arrow">
+↓
+</div>
+
+
+<div>
+<b>17:00</b><br>
+🥂 Celebration at Original Restaurant
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<div class="title">
+🌸 Gallery
+</div>
+
+
+<div class="gallery">
+
+<div>🕊</div>
+<div>✝️</div>
+<div>🕯</div>
+<div>🤍</div>
+<div>👟</div>
+<div>📖</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card footer">
+
+
+Your presence will be the greatest gift<br>
+to our family.
+
+<br><br>
+
+We look forward to celebrating<br>
+this special day together.
+
+
+</div>
+
+
+
+
+
+<a class="btn" href="YOUR_CHURCH_LINK" target="_blank">
+⛪ Open Church Location
+</a>
+
+
+<a class="btn" href="YOUR_RESTAURANT_LINK" target="_blank">
+🍽 Open Restaurant Location
+</a>
+
+
+
+</div>
+
+
+</body>
+</html>
