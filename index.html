@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hy">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holy Baptism Invitation | Stella, Arpi & Michael</title>
+    <title>Սուրբ Մկրտության Հրավեր | Ստելլա, Արփի և Միքայել</title>
 
-    <!-- ==================== GOOGLE FONTS ==================== -->
+    <!-- ==================== GOOGLE FONTS (Հայերեն տառատեսակներ) ==================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@400;500;700&family=Noto+Sans+Armenian:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* ==================== CSS VARIABLES (Soft Pastel Palette) ==================== */
+        /* ==================== ԳՈՒՅՆԵՐԻ ՓՈՓՈԽԱԿԱՆՆԵՐ (Նուրբ պաստելային գամմա) ==================== */
         :root {
             --ivory: #F9F6F1;
             --beige: #E9DFD2;
@@ -27,7 +27,7 @@
             --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* ==================== RESET & BASE ==================== */
+        /* ==================== ՎԵՐԱԿԱՆԳՆՈՒՄ ԵՎ ՀԻՄՆԱԿԱՆ ՈՃԵՐ ==================== */
         * {
             margin: 0;
             padding: 0;
@@ -39,23 +39,22 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Noto Sans Armenian', sans-serif;
             background-color: var(--ivory);
             color: var(--text);
-            line-height: 1.7;
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Noto Serif Armenian', serif;
             font-weight: 500;
         }
 
-        /* ==================== HERO SECTION ==================== */
+        /* ==================== HERO (ԳԼԽԱՎՈՐ) ՀԱՏՎԱԾ ==================== */
         .hero {
             height: 100vh;
             min-height: 700px;
-            /* Elegant dark overlay for text readability over the background image */
             background: linear-gradient(
                 to bottom,
                 rgba(40, 35, 30, 0.5),
@@ -64,7 +63,7 @@
             url("https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80");
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax-like effect */
+            background-attachment: fixed; /* Պարալաքս էֆեկտ */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -79,10 +78,10 @@
         }
 
         .logo {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Noto Sans Armenian', sans-serif;
             font-size: 0.85rem;
             font-weight: 500;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: #F8DFAA;
             margin-bottom: 1.5rem;
@@ -91,7 +90,7 @@
         .hero h1 {
             font-size: clamp(3rem, 8vw, 4.5rem);
             margin-bottom: 1.5rem;
-            line-height: 1.1;
+            line-height: 1.2;
         }
 
         .hero p {
@@ -103,7 +102,7 @@
         }
 
         .hero .names {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Noto Serif Armenian', serif;
             font-size: clamp(1.5rem, 4vw, 2.2rem);
             font-style: italic;
             color: var(--gold);
@@ -111,7 +110,7 @@
             font-weight: 400;
         }
 
-        /* ==================== BUTTONS ==================== */
+        /* ==================== ԿՈՃԱԿՆԵՐ ==================== */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -131,7 +130,7 @@
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             transition: var(--transition);
             box-shadow: 0 10px 25px rgba(200, 169, 106, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -154,14 +153,14 @@
             color: #ffffff;
         }
 
-        /* ==================== MAIN CONTAINER ==================== */
+        /* ==================== ՀԻՄՆԱԿԱՆ ՊԱՐՈՒՆԱԿՈՒԹՅՈՒՆ ==================== */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 80px 24px;
         }
 
-        /* ==================== CARDS (Glassmorphism) ==================== */
+        /* ==================== ՔԱՐՏԵՐ (Ապակե էֆեկտ / Glassmorphism) ==================== */
         .card {
             background: var(--white-glass);
             backdrop-filter: blur(15px);
@@ -188,7 +187,7 @@
             display: inline-block;
         }
 
-        /* Decorative underline for titles */
+        /* Վերնագրի դեկորատիվ գիծ */
         .title::after {
             content: '';
             display: block;
@@ -210,7 +209,7 @@
             font-weight: 500;
         }
 
-        /* ==================== TIMELINE / PROGRAM ==================== */
+        /* ==================== ԺԱՄԱՆԱԿԱՑՈՒՅՑ / ԾՐԱԳԻՐ ==================== */
         .timeline {
             display: flex;
             justify-content: center;
@@ -251,7 +250,7 @@
             font-weight: 400;
         }
 
-        /* ==================== GALLERY (CSS Grid) ==================== */
+        /* ==================== ՊԱՏԿԵՐԱՍՐԱՀ (CSS Grid) ==================== */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -274,11 +273,11 @@
             z-index: 2;
         }
 
-        /* ==================== FOOTER ==================== */
+        /* ==================== ՆԵՐՔՆԱԷՋ (Footer) ==================== */
         .footer {
             text-align: center;
             padding: 60px 20px 40px;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Noto Serif Armenian', serif;
         }
 
         .footer p {
@@ -289,7 +288,7 @@
         }
 
         .footer .subtext {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Noto Sans Armenian', sans-serif;
             font-size: 0.9rem;
             font-style: normal;
             color: var(--text-light);
@@ -297,7 +296,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* ==================== ANIMATIONS ==================== */
+        /* ==================== ԱՆԻՄԱՑԻԱՆԵՐ ==================== */
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -309,11 +308,11 @@
             }
         }
 
-        /* ==================== RESPONSIVE DESIGN ==================== */
+        /* ==================== ՀԱՐՄԱՐԵՑՈՒՄ ԲՋՋԱՅԻՆ ՍԱՐՔԵՐԻ ՀԱՄԱՐ ==================== */
         @media (max-width: 768px) {
             .hero {
                 min-height: 600px;
-                background-attachment: scroll; /* Better performance on mobile */
+                background-attachment: scroll; /* Ավելի լավ արտադրողականություն բջջայինում */
             }
 
             .card {
@@ -355,87 +354,86 @@
 </head>
 <body>
 
-    <!-- ==================== HERO SECTION ==================== -->
+    <!-- ==================== HERO (ԳԼԽԱՎՈՐ) ՀԱՏՎԱԾ ==================== -->
     <section class="hero">
         <div class="hero-content">
-            <div class="logo">EverInvite Presents</div>
-            <h1>Holy Baptism</h1>
+            <div class="logo">EverInvite-ը ներկայացնում է</div>
+            <h1>Սուրբ Մկրտություն</h1>
             <p>
-                With love and gratitude,<br>
-                we joyfully invite you to celebrate the Holy Baptism of our beloved children
+                Սիրով և երախտագիտությամբ<br>
+                մենք ուրախությամբ հրավիրում ենք ձեզ մասնակցելու մեր սիրելի երեխաների Սուրբ Մկրտության տոնակատարությանը
             </p>
-            <h2 class="names">Stella &nbsp;•&nbsp; Arpi &nbsp;•&nbsp; Michael</h2>
+            <h2 class="names">Ստելլա &nbsp;•&nbsp; Արփի &nbsp;•&nbsp; Միքայել</h2>
         </div>
     </section>
 
-    <!-- ==================== MAIN CONTENT ==================== -->
+    <!-- ==================== ՀԻՄՆԱԿԱՆ ՊԱՐՈՒՆԱԿՈՒԹՅՈՒՆ ==================== -->
     <main class="container">
 
-        <!-- Ceremony Details Card -->
+        <!-- Մկրտության մանրամասներ -->
         <article class="card">
-            <h2 class="title">✝️ Baptism Ceremony</h2>
+            <h2 class="title">✝️ Մկրտության արարողություն</h2>
             <div class="info">
-                <p>📅 <strong>November 1, 2026</strong></p>
-                <p>⛪ <strong>Holy Hovhannes Church</strong></p>
-                <p>📍 Abovyan, Armenia</p>
+                <p>📅 <strong>Նոյեմբերի 1, 2026 թ.</strong></p>
+                <p>⛪ <strong>Սուրբ Հովհաննես եկեղեցի</strong></p>
+                <p>📍 Աբովյան, Հայաստան</p>
                 <p>🕒 <strong>15:45</strong></p>
             </div>
         </article>
 
-        <!-- Celebration Details Card -->
+        <!-- Տոնական ընթրիքի մանրամասներ -->
         <article class="card">
-            <h2 class="title">🍽 Celebration Dinner</h2>
+            <h2 class="title">🍽 Տոնական ընթրիք</h2>
             <div class="info">
-                <p><strong>Original Restaurant</strong></p>
+                <p><strong>«Օրիջինալ» ռեստորան</strong></p>
                 <p>🕔 <strong>17:00</strong></p>
                 <br>
                 <p style="font-style: italic; color: var(--text-light);">
-                    Join us for dinner, love, laughter,<br>and unforgettable memories.
+                    Միացեք մեզ՝ վայելելու ընթրիքը, սերը,<br>ծիծաղը և անմոռանալի հիշողությունները:
                 </p>
             </div>
         </article>
 
-        <!-- Program Timeline Card -->
+        <!-- Օրվա ծրագիր -->
         <article class="card">
-            <h2 class="title">🤍 Program of the Day</h2>
+            <h2 class="title">🤍 Օրվա ծրագիր</h2>
             <div class="timeline">
                 <div class="step">
                     <h3>15:45</h3>
-                    <p>✝️ Holy Baptism Ceremony</p>
+                    <p>✝️ Սուրբ Մկրտության արարողություն</p>
                 </div>
                 <div class="step">
                     <h3>17:00</h3>
-                    <p>🥂 Celebration Dinner</p>
+                    <p>🥂 Տոնական ընթրիք</p>
                 </div>
             </div>
         </article>
 
-        <!-- Gallery Card -->
+        <!-- Պատկերասրահ -->
         <article class="card">
-            <h2 class="title">🌸 Gallery</h2>
+            <h2 class="title">🌸 Պատկերասրահ</h2>
             <div class="gallery">
-                <!-- Added alt tags for accessibility -->
-                <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=800&q=80" alt="Baptism candle detail">
-                <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80" alt="Celebration table setting">
-                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Church interior">
-                <img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=800&q=80" alt="Floral arrangement">
-                <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=800&q=80" alt="Elegant invitation detail">
-                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Soft lighting decor">
+                <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=800&q=80" alt="Մկրտության մոմի դետալ">
+                <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80" alt="Տոնական սեղանի սարքավորում">
+                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Եկեղեցու ինտերիեր">
+                <img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=800&q=80" alt="Ծաղկեպսակ և դեկոր">
+                <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=800&q=80" alt="Նուրբ հրավիրատոմսի դետալ">
+                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Նուրբ լուսավորություն">
             </div>
         </article>
 
-        <!-- Footer Message -->
+        <!-- Ներքնաէջի ուղերձ -->
         <footer class="footer">
-            <p>Your presence will be the greatest gift to our family 🤍</p>
-            <p class="subtext">We look forward to celebrating this special day together.</p>
+            <p>Ձեր ներկայությունը մեր ընտանիքի համար ամենամեծ նվերն է 🤍</p>
+            <p class="subtext">Անհամբեր սպասում ենք այս առանձնահատուկ օրը միասին տոնելուն:</p>
             
-            <!-- Action Buttons -->
+            <!-- Գործողության կոճակներ -->
             <div class="btn-group">
-                <a class="btn" href="https://maps.google.com/?q=Holy+Hovhannes+Church+Abovyan" target="_blank" rel="noopener noreferrer">
-                    ⛪ Church Location
+                <a class="btn" href="https://maps.google.com/?q=Սուրբ+Հովհաննես+եկեղեցի+Աբովյան" target="_blank" rel="noopener noreferrer">
+                    ⛪ Եկեղեցու հասցե
                 </a>
-                <a class="btn btn-outline" href="https://maps.google.com/?q=Original+Restaurant+Abovyan" target="_blank" rel="noopener noreferrer">
-                    🍽 Restaurant Location
+                <a class="btn btn-outline" href="https://maps.google.com/?q=Օրիջինալ+ռեստորան+Աբովյան" target="_blank" rel="noopener noreferrer">
+                    🍽 Ռեստորանի հասցե
                 </a>
             </div>
         </footer>
