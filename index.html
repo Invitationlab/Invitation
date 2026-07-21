@@ -2,9 +2,9 @@
 <html lang="hy">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>Ստելլա • Արփի • Միքայել — Սուրբ Մկրտություն</title>
-<meta name="description" content="Սիրով հրավիրում ենք մեր երեխաների՝ Ստելլայի, Արիի և Միքայելի Սուրբ Մկրտության Արարողությանը։" />
+<meta name="description" content="Սիրով հրավիրում ենք մեր երեխաների՝ Ստելլայի, Արփիի և Միքայելի Սուրբ Մկրտության Արարողությանը։" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -269,8 +269,8 @@ a { text-decoration: none; color: inherit; }
 .hero-names {
   font-family: 'Playfair Display', serif;
   font-weight: 500;
-  font-size: clamp(28px, 5vw, 56px);
-  letter-spacing: 8px;
+  font-size: clamp(28px, 7vw, 56px);
+  letter-spacing: 6px;
   background: linear-gradient(135deg, var(--champagne-deep) 0%, var(--champagne) 50%, var(--champagne-deep) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -278,6 +278,7 @@ a { text-decoration: none; color: inherit; }
   margin: 40px 0;
   animation: fadeUp 1.5s ease-out 1.4s both;
   line-height: 1.4;
+  word-wrap: break-word;
 }
 
 .hero-date {
@@ -366,17 +367,6 @@ section {
   line-height: 1.3;
 }
 
-.section-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: clamp(17px, 2.2vw, 21px);
-  color: var(--ink-soft);
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 70px;
-  line-height: 1.8;
-}
-
 .divider {
   width: 100px; height: 1px;
   margin: 25px auto 60px;
@@ -457,19 +447,10 @@ section {
   border-radius: 32px;
   padding: 80px 50px;
   text-align: center;
-  box-shadow: 
-    0 30px 80px rgba(60, 45, 20, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 30px 80px rgba(60, 45, 20, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease;
-}
-
-.glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 
-    0 40px 100px rgba(60, 45, 20, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .glass-card::before {
@@ -547,24 +528,10 @@ section {
   overflow: hidden;
 }
 
-.event-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
-  transform: scaleX(0);
-  transition: transform 0.6s ease;
-}
-
 .event-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 35px 80px rgba(60, 45, 20, 0.12);
   border-color: rgba(200, 169, 106, 0.4);
-}
-
-.event-card:hover::before {
-  transform: scaleX(1);
 }
 
 .event-icon {
@@ -596,16 +563,6 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-size: 19px;
   color: var(--ink-soft);
-  transition: all 0.3s ease;
-}
-
-.event-detail:hover {
-  color: var(--champagne-deep);
-  transform: translateX(5px);
-}
-
-.event-detail .icon {
-  font-size: 20px;
 }
 
 .event-detail strong {
@@ -644,7 +601,6 @@ section {
   width: 2px;
   background: linear-gradient(180deg, transparent, var(--champagne), transparent);
   transform: translateX(-50%);
-  box-shadow: 0 0 20px rgba(200, 169, 106, 0.3);
 }
 
 .tl-item {
@@ -652,20 +608,11 @@ section {
   width: 50%;
   padding: 30px 50px;
   text-align: right;
-  transition: all 0.5s ease;
-}
-
-.tl-item:hover {
-  transform: translateX(10px);
 }
 
 .tl-item:nth-child(even) {
   margin-left: 50%;
   text-align: left;
-}
-
-.tl-item:nth-child(even):hover {
-  transform: translateX(-10px);
 }
 
 .tl-item::before {
@@ -676,14 +623,8 @@ section {
   border-radius: 50%;
   background: var(--white);
   border: 3px solid var(--champagne);
-  box-shadow: 0 0 0 6px rgba(200, 169, 106, 0.15), 0 0 20px rgba(200, 169, 106, 0.3);
+  box-shadow: 0 0 0 6px rgba(200, 169, 106, 0.15);
   z-index: 2;
-  transition: all 0.3s ease;
-}
-
-.tl-item:hover::before {
-  transform: scale(1.3);
-  box-shadow: 0 0 0 8px rgba(200, 169, 106, 0.2), 0 0 30px rgba(200, 169, 106, 0.5);
 }
 
 .tl-item:nth-child(odd)::before { right: -9px; }
@@ -712,22 +653,6 @@ section {
   font-style: italic;
 }
 
-@media(max-width: 600px) {
-  .timeline::before { left: 24px; }
-  .tl-item, .tl-item:nth-child(even) {
-    width: 100%;
-    margin-left: 0;
-    padding: 20px 20px 20px 60px;
-    text-align: left;
-  }
-  .tl-item:hover, .tl-item:nth-child(even):hover {
-    transform: translateX(0);
-  }
-  .tl-item::before, .tl-item:nth-child(odd)::before, .tl-item:nth-child(even)::before {
-    left: 15px; right: auto;
-  }
-}
-
 /* ═══════════════════════════════════════════
    LOCATION SECTION
    ═══════════════════════════════════════════ */
@@ -748,13 +673,7 @@ section {
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(60, 45, 20, 0.08);
-  transition: all 0.6s ease;
   border: 1px solid rgba(200, 169, 106, 0.15);
-}
-
-.location-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(60, 45, 20, 0.15);
 }
 
 .location-img {
@@ -762,11 +681,6 @@ section {
   background-size: cover;
   background-position: center;
   position: relative;
-  transition: transform 0.7s ease;
-}
-
-.location-card:hover .location-img {
-  transform: scale(1.1);
 }
 
 .location-img::after {
@@ -808,13 +722,7 @@ section {
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  transition: all 0.5s ease;
   box-shadow: 0 8px 20px rgba(200, 169, 106, 0.3);
-}
-
-.location-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(200, 169, 106, 0.5);
 }
 
 /* ═══════════════════════════════════════════
@@ -844,7 +752,7 @@ section {
 }
 
 /* ═══════════════════════════════════════════
-   MUSIC TOGGLE - ՒՂՂՎԱԾ
+   MUSIC TOGGLE
    ═══════════════════════════════════════════ */
 .music-toggle {
   position: fixed;
@@ -861,14 +769,13 @@ section {
   box-shadow: 0 8px 25px rgba(200, 169, 106, 0.4);
   transition: all 0.5s ease;
   z-index: 1000;
-  display: flex;
+  display: none; /* Սկզբում թաքնված է */
   align-items: center;
   justify-content: center;
 }
 
 .music-toggle:hover {
   transform: scale(1.1);
-  box-shadow: 0 12px 35px rgba(200, 169, 106, 0.6);
 }
 
 .music-toggle.playing {
@@ -913,7 +820,7 @@ footer .names {
 }
 
 /* ═══════════════════════════════════════════
-   RESPONSIVE - ՈՒՂՂԱԾ
+   RESPONSIVE (Mobile Optimized)
    ═══════════════════════════════════════════ */
 @media(max-width: 768px) {
   section { padding: 100px 20px; }
@@ -922,7 +829,6 @@ footer .names {
   .cards-grid { gap: 24px; }
   .countdown-item { min-width: 100px; padding: 25px 15px; }
   
-  /* Music toggle mobile - ավելի վերև */
   .music-toggle {
     bottom: 100px;
     right: 20px;
@@ -934,14 +840,13 @@ footer .names {
 
 @media(max-width: 480px) {
   .hero-names { 
-    letter-spacing: 4px;
-    font-size: clamp(24px, 8vw, 42px);
+    letter-spacing: 3px;
+    font-size: clamp(24px, 9vw, 42px);
   }
   .glass-card { padding: 50px 24px; }
   .countdown-grid { gap: 16px; }
   .countdown-item { min-width: calc(50% - 8px); }
   
-  /* Music toggle small mobile */
   .music-toggle {
     bottom: 80px;
     right: 15px;
@@ -953,8 +858,8 @@ footer .names {
 
 @media(max-width: 360px) {
   .hero-names {
-    letter-spacing: 2px;
-    font-size: clamp(20px, 9vw, 36px);
+    letter-spacing: 1px;
+    font-size: clamp(20px, 10vw, 36px);
   }
 }
 </style>
@@ -965,21 +870,15 @@ footer .names {
 <div class="cover-screen" id="coverScreen">
   <div class="cover-content">
     <div class="cover-cross">✝</div>
-    <h1 class="cover-title">ուրբ Մկրտություն</h1>
+    <h1 class="cover-title">Սուրբ Մկրտություն</h1>
     <button class="open-btn" onclick="openInvitation()">Բացել հրավիրատոմսը</button>
   </div>
 </div>
 
 <!-- Floating Particles -->
 <div class="particles">
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
 </div>
 
 <!-- Floating Flowers -->
@@ -991,7 +890,7 @@ footer .names {
 <div id="yt-player" style="position: absolute; top: -9999px; left: -9999px;"></div>
 
 <!-- Music Toggle -->
-<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Միացնել/Անջատել երաժշտությունը" style="display: none;">🎵</button>
+<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Միացնել/Անջատել երաժշտությունը">🎵</button>
 
 <!-- HERO SECTION -->
 <section class="hero">
@@ -1002,7 +901,7 @@ footer .names {
     <div class="hero-label">Սուրբ Մկրտություն</div>
     <h1 class="hero-title">Օրհնությամբ սկսվող նոր ճանապարհ</h1>
     <p class="hero-subtitle">Սիրով հրավիրում ենք մասնակցելու մեր երեխաների Սուրբ Մկրտության Արարողությանը</p>
-    <div class="hero-names">ՍՏԵԼԼԱ • ԱՓ#Ի • ՄԻՔԱԵԼ</div>
+    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐՓԻ • ՄԻՔԱՅԵԼ</div>
     <div class="hero-date">01.11.2026</div>
     <div class="hero-divider"></div>
   </div>
@@ -1036,7 +935,7 @@ footer .names {
       </div>
       <div class="countdown-item">
         <div class="countdown-number" id="hours">00</div>
-        <div class="countdown-label">ամ</div>
+        <div class="countdown-label">Ժամ</div>
       </div>
       <div class="countdown-item">
         <div class="countdown-number" id="minutes">00</div>
@@ -1061,32 +960,17 @@ footer .names {
       <div class="event-card">
         <span class="event-icon" style="color: var(--champagne);">✝</span>
         <h3>Սուրբ Մկրտության Արարողություն</h3>
-        <div class="event-detail">
-          <span class="icon"></span>
-          <strong>01 Նոյեմբերի, 2026</strong>
-        </div>
-        <div class="event-detail">
-          <span class="icon"></span>
-          <strong>15:45</strong>
-        </div>
-        <div class="event-detail">
-          <span class="icon">📍</span>
-          <span>Սուրբ Հովհաննես Եկեղեցի</span>
-        </div>
+        <div class="event-detail"><strong>01 Նոյեմբերի, 2026</strong></div>
+        <div class="event-detail"><span class="icon">🕒</span> <strong>15:45</strong></div>
+        <div class="event-detail"><span class="icon">📍</span> <span>Սուրբ Հովհաննես Եկեղեցի</span></div>
         <p class="subtext">Աբովյան, Հայաստան</p>
       </div>
 
       <div class="event-card">
         <span class="event-icon">🥂</span>
         <h3>Տոնական Ընդունելություն</h3>
-        <div class="event-detail">
-          <span class="icon">📍</span>
-          <span>Օրիգինալ Ռեստորան</span>
-        </div>
-        <div class="event-detail">
-          <span class="icon">🕒</span>
-          <strong>17:00</strong>
-        </div>
+        <div class="event-detail"><span class="icon">📍</span> <span>Օրիգինալ Ռեստորան</span></div>
+        <div class="event-detail"><span class="icon">🕒</span> <strong>17:00</strong></div>
         <p class="subtext">Եկեք միասին տոնենք այս օրհնյալ օրը՝ ստեղծելով հիշողություններ, որոնք կմնան մեր սրտերում։</p>
       </div>
     </div>
@@ -1096,7 +980,7 @@ footer .names {
 <!-- TIMELINE SECTION -->
 <section class="timeline-section">
   <div class="container">
-    <div class="section-label">✦ Օրվա Ծրագիր </div>
+    <div class="section-label">✦ Օրվա Ծրագիր ✦</div>
     <h2 class="section-title">Ժամանակացույց</h2>
     <div class="divider"></div>
 
@@ -1104,7 +988,7 @@ footer .names {
       <div class="tl-item">
         <div class="tl-time">15:45</div>
         <div class="tl-title">Սուրբ Մկրտություն</div>
-        <div class="tl-loc">Սուրբ Հովհաննես կեղեցի</div>
+        <div class="tl-loc">Սուրբ Հովհաննես Եկեղեցի</div>
       </div>
       <div class="tl-item">
         <div class="tl-time">17:00</div>
@@ -1126,11 +1010,10 @@ footer .names {
       <div class="location-card">
         <div class="location-img" style="background-image: url('Church.jpg')"></div>
         <div class="location-body">
-          <h3>⛪ Սուրբ Հովհաննես եկեղեցի</h3>
+          <h3>⛪ Սուրբ Հովհաննես Եկեղեցի</h3>
           <p>Աբովյան, Հայաստան</p>
           <a href="https://maps.google.com/?q=Abovyan+Armenia" target="_blank" class="location-btn">
-            <span>📍</span>
-            <span>Բացել Քարտեզում</span>
+            <span>📍</span> <span>Բացել Քարտեզում</span>
           </a>
         </div>
       </div>
@@ -1141,8 +1024,7 @@ footer .names {
           <h3>🥂 Օրիգինալ Ռեստորան</h3>
           <p>Տոնական ընթրիքի վայր</p>
           <a href="https://maps.google.com/?q=Original+Restaurant+Armenia" target="_blank" class="location-btn">
-            <span>📍</span>
-            <span>Բացել Քարտեզում</span>
+            <span>📍</span> <span>Բացել Քարտեզում</span>
           </a>
         </div>
       </div>
@@ -1164,7 +1046,7 @@ footer .names {
   <div class="footer-ornament">✦ ✦ ✦</div>
   <p>Օրհնությամբ և սիրով պատրաստված</p>
   <p>Սուրբ Մկրտություն · 2026</p>
-  <div class="names">ՍՏԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱԵԼ</div>
+  <div class="names">ՍՏԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱՅԵԼ</div>
 </footer>
 
 <!-- YouTube IFrame API & Countdown Script -->
@@ -1179,7 +1061,7 @@ function updateCountdown() {
   const distance = targetDate - now;
 
   if (distance < 0) {
-    document.querySelector('.countdown-grid').innerHTML = '<div class="countdown-item" style="min-width: 300px;"><div class="countdown-number" style="font-size: 32px;">Արարողությունը կայացել է</div></div>';
+    document.querySelector('.countdown-grid').innerHTML = '<div class="countdown-item" style="min-width: 300px;"><div class="countdown-number" style="font-size: 28px;">Արարողությունը կայացել է</div></div>';
     return;
   }
 
@@ -1197,8 +1079,8 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// ══════════════════════════════════════════
-// YOUTUBE MUSIC PLAYER LOGIC - ՈՒՂՂՎԱԾ
+// ═══════════════════════════════════════════
+// YOUTUBE MUSIC PLAYER LOGIC (Mobile Fixed)
 // ═══════════════════════════════════════════
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -1208,6 +1090,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 var isPlaying = false;
 var playerReady = false;
+var userClickedOpen = false;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('yt-player', {
@@ -1215,7 +1098,8 @@ function onYouTubeIframeAPIReady() {
     width: '0',
     videoId: '0COdq1IT5Hc',
     playerVars: {
-      'autoplay': 0,
+      'autoplay': 1,          // Փորձում է ավտոմատ միացնել
+      'playsinline': 1,       // ՇԱՏ ԿԱՐԵՎՈՐ է iOS/Android-ի համար
       'controls': 0,
       'disablekb': 1,
       'fs': 0,
@@ -1225,7 +1109,8 @@ function onYouTubeIframeAPIReady() {
       'playlist': '0COdq1IT5Hc'
     },
     events: {
-      'onReady': onPlayerReady
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
     }
   });
 }
@@ -1233,47 +1118,83 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
   playerReady = true;
   player.setVolume(50);
+  
+  // Եթե օգտատերը արդեն սեղմել էր "Բացել" կոճակը, միացնում ենք
+  if (userClickedOpen) {
+    attemptPlay();
+  }
 }
 
-function toggleMusic() {
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.PLAYING && !isPlaying) {
+    isPlaying = true;
+    updateMusicButton(true);
+  } else if (event.data === YT.PlayerState.PAUSED && isPlaying) {
+    isPlaying = false;
+    updateMusicButton(false);
+  }
+}
+
+function attemptPlay() {
   if (!player || !playerReady) return;
   
+  var playPromise = player.playVideo();
+  if (playPromise !== undefined) {
+    playPromise.then(function() {
+      isPlaying = true;
+      updateMusicButton(true);
+    }).catch(function(error) {
+      // Mobile բրաուզերը արգելափակեց ավտոմատ միացումը
+      console.log("Autoplay prevented:", error);
+      isPlaying = false;
+      updateMusicButton(false);
+    });
+  }
+}
+
+function updateMusicButton(playing) {
   var toggleBtn = document.getElementById('musicToggle');
-  
-  if (isPlaying) {
-    player.pauseVideo();
-    toggleBtn.classList.remove('playing');
-    toggleBtn.innerHTML = '🎵';
-  } else {
-    player.playVideo();
+  toggleBtn.style.display = 'flex';
+  if (playing) {
     toggleBtn.classList.add('playing');
     toggleBtn.innerHTML = '🔇';
+  } else {
+    toggleBtn.classList.remove('playing');
+    toggleBtn.innerHTML = '🎵';
   }
-  
-  isPlaying = !isPlaying;
 }
 
 function openInvitation() {
   document.getElementById('coverScreen').classList.add('hidden');
   document.body.style.overflow = 'auto';
+  userClickedOpen = true;
   
-  // Show music toggle button
-  document.getElementById('musicToggle').style.display = 'flex';
-  
-  // Auto-play music when opening (after button click - browser allows this)
-  setTimeout(function() {
-    if (player && playerReady && !isPlaying) {
-      player.playVideo();
-      isPlaying = true;
-      var toggleBtn = document.getElementById('musicToggle');
-      toggleBtn.classList.add('playing');
-      toggleBtn.innerHTML = '🔇';
-      toggleBtn.style.display = 'flex';
-    }
-  }, 1500);
+  // Անմիջապես փորձում ենք միացնել (սա համարվում է "trusted event" mobile-ի համար)
+  if (playerReady && player) {
+    attemptPlay();
+  } else {
+    // Եթե player-ը դեռ բեռնվում է, ցույց ենք տալիս 🎵 կոճակը
+    updateMusicButton(false);
+  }
 }
 
-// Prevent scrolling when cover is visible
+function toggleMusic() {
+  if (!player || !playerReady) return;
+  
+  if (isPlaying) {
+    player.pauseVideo();
+  } else {
+    // Այս հպումը 100% "trusted event" է, ուստի միշտ կաշխատի
+    var playPromise = player.playVideo();
+    if (playPromise !== undefined) {
+      playPromise.catch(function() {
+        console.log("Manual play failed");
+      });
+    }
+  }
+}
+
+// Արգելել scroll-ը մինչև կոճակը սեղմելը
 document.body.style.overflow = 'hidden';
 </script>
 
