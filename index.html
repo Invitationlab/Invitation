@@ -1,23 +1,4 @@
-
-                        <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <style>
-                body {
-                  background-color: white; /* Ensure the iframe has a white background */
-                }
-
-                .hero-cross {
-  display: none !important;
-}
-
-
-              </style>
-                        </head>
-                        <body>
-                            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hy">
 <head>
 <meta charset="UTF-8" />
@@ -731,7 +712,7 @@ section {
 
 /* ══════════════════════════════════════════
    CARDS SECTION
-   ══════════════════════════════════════════ */
+   ═════════════════════════════════════════ */
 .details {
   background: linear-gradient(180deg, var(--beige) 0%, var(--sage) 100%);
 }
@@ -980,7 +961,7 @@ section {
 }
 
 /* ══════════════════════════════════════════
-   MUSIC TOGGLE
+   MUSIC TOGGLE - ՈՒՂՂՎԱԾ
    ══════════════════════════════════════════ */
 .music-toggle {
   position: fixed;
@@ -997,7 +978,7 @@ section {
   box-shadow: 0 8px 25px rgba(212,175,55,0.4);
   transition: all 0.5s ease;
   z-index: 1000;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -1044,7 +1025,7 @@ footer .names {
 
 /* ══════════════════════════════════════════
    RESPONSIVE
-   ══════════════════════════════════════════ */
+   ═════════════════════════════════════════ */
 @media(max-width: 768px) {
   section { padding: 100px 20px; }
   .glass-card { padding: 60px 30px; }
@@ -1053,7 +1034,6 @@ footer .names {
   .countdown-item { min-width: 100px; padding: 25px 15px; }
   .music-toggle { bottom: 100px; right: 20px; width: 50px; height: 50px; font-size: 20px; }
   
-  /* Հեռացնել խաչը mobile-ում */
   .hero-cross {
     display: none !important;
   }
@@ -1141,11 +1121,11 @@ footer .names {
 <div class="flower">🌹</div>
 <div class="flower">🌿</div>
 
-<!-- Hidden YouTube Player -->
-<div id="yt-player" style="position: absolute; top: -9999px; left: -9999px;"></div>
+<!-- YouTube Player - ՈՒՂՂՎԱԾ (1x1 pixel, ոչ թե թաքնված) -->
+<div id="yt-player" style="position: fixed; top: 0; left: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; z-index: -1;"></div>
 
 <!-- Music Toggle -->
-<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Միացնել/Անջատել երաժշտությունը"></button>
+<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Միացնել/Անջատել երաժշտությունը">🎵</button>
 
 <!-- HERO SECTION -->
 <section class="hero">
@@ -1156,7 +1136,7 @@ footer .names {
     <div class="hero-label">Սուրբ Մկրտություն</div>
     <h1 class="hero-title">Օրհնությամբ սկսվող նոր ճանապարհ</h1>
     <p class="hero-subtitle">Սիրով հրավիրում ենք մասնակցելու մեր երեխաների Սուրբ Մկրտության Արարողությանը</p>
-    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐՓԻ • ՄԻՔԱՅԵԼ</div>
+    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐԻ • ՄԻՔԱԵԼ</div>
     <div class="hero-date">01.11.2026</div>
     <div class="hero-divider"></div>
   </div>
@@ -1223,7 +1203,7 @@ footer .names {
 
       <div class="event-card">
         <span class="event-icon">🥂</span>
-        <h3>Տոնական Ընդունելություն</h3>
+        <h3>Տոնական նդունելություն</h3>
         <div class="event-detail"><span class="icon">📍</span> <span>Օրիգինալ Ռեստորան</span></div>
         <div class="event-detail"><span class="icon">🕒</span> <strong>17:00</strong></div>
         <p class="subtext">Եկեք միասին տոնենք այս օրհնյալ օրը ստեղծելով հիշողություններ, որոնք կմնան մեր սրտերում։</p>
@@ -1247,7 +1227,7 @@ footer .names {
       </div>
       <div class="tl-item">
         <div class="tl-time">17:00</div>
-        <div class="tl-title">Տոնական ընթրիք</div>
+        <div class="tl-title">ոնական ընթրիք</div>
         <div class="tl-loc">Օրիգինալ Ռեստորան</div>
       </div>
     </div>
@@ -1265,7 +1245,7 @@ footer .names {
       <div class="location-card">
         <div class="location-img" style="background-image: url('Church.jpg')"></div>
         <div class="location-body">
-          <h3>⛪ Սուրբ Հովհաննես Եկեղեցի</h3>
+          <h3> Սուրբ Հովհաննես Եկեղեցի</h3>
           <p>Աբովյան, Հայաստան</p>
           <a href="https://maps.google.com/?q=Abovyan+Armenia" target="_blank" class="location-btn">
             <span>📍</span> <span>Բացել Քարտեզում</span>
@@ -1279,7 +1259,7 @@ footer .names {
           <h3>🥂 Օրիգինալ Ռեստորան</h3>
           <p>Տոնական ընթրիքի վայր</p>
           <a href="https://maps.google.com/?q=Original+Restaurant+Armenia" target="_blank" class="location-btn">
-            <span>📍</span> <span>Բացել Քարտեզում</span>
+            <span></span> <span>Բացել Քարտեզում</span>
           </a>
         </div>
       </div>
@@ -1291,19 +1271,22 @@ footer .names {
 <section class="quote-section">
   <div class="container">
     <div class="quote-divider"></div>
-    <p class="quote-text">"Ձեր ներկայությունը կդարձնի այս օրհնյալ օրն էլ ավելի լիարժեք և անմոռանալի մեզ համար։"</p>
+    <p class="quote-text">"Ձեր ներկայությունը կդարձնի այս օրհնյալ օրն էլ ավելի իարժեք և անմոռանալի մեզ համար։"</p>
     <div class="quote-divider"></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-ornament"> ✦ ✦</div>
+  <div class="footer-ornament">✦ ✦ </div>
   <p>Սուրբ Մկրտություն · 2026</p>
-  <div class="names">ՍԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱՅԵԼ</div>
+  <div class="names">ՍՏԵԼԼԱ · ԱՐՓԻ · ՄՔԱՅԵԼ</div>
 </footer>
 
 <script>
+// ══════════════════════════════════════════
+// COUNTDOWN TIMER
+// ══════════════════════════════════════════
 const targetDate = new Date('2026-11-01T15:45:00').getTime();
 
 function updateCountdown() {
@@ -1329,6 +1312,9 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
+// ══════════════════════════════════════════
+// YOUTUBE MUSIC - ՈՒՂՂՎԱԾ MOBILE- ՀԱՄԱՐ
+// ══════════════════════════════════════════
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -1338,14 +1324,16 @@ var player;
 var isPlaying = false;
 var playerReady = false;
 var userClickedOpen = false;
+var retryCount = 0;
+var maxRetries = 5;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('yt-player', {
-    height: '0',
-    width: '0',
+    height: '1',
+    width: '1',
     videoId: '0COdq1IT5Hc',
     playerVars: {
-      'autoplay': 1,
+      'autoplay': 0,
       'playsinline': 1,
       'controls': 0,
       'disablekb': 1,
@@ -1357,44 +1345,62 @@ function onYouTubeIframeAPIReady() {
     },
     events: {
       'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
+      'onStateChange': onPlayerStateChange,
+      'onError': onPlayerError
     }
   });
 }
 
 function onPlayerReady(event) {
   playerReady = true;
-  player.setVolume(50);
-  if (userClickedOpen) attemptPlay();
+  player.setVolume(60);
+  
+  // Եթե օգտատերը արդեն սեղմել է, փորձել միացնել
+  if (userClickedOpen) {
+    attemptPlay();
+  }
 }
 
 function onPlayerStateChange(event) {
-  if (event.data === YT.PlayerState.PLAYING && !isPlaying) {
+  if (event.data === YT.PlayerState.PLAYING) {
     isPlaying = true;
     updateMusicButton(true);
-  } else if (event.data === YT.PlayerState.PAUSED && isPlaying) {
+    retryCount = 0;
+  } else if (event.data === YT.PlayerState.PAUSED) {
     isPlaying = false;
     updateMusicButton(false);
+  } else if (event.data === YT.PlayerState.ENDED) {
+    // Loop-ի համար
+    if (player) {
+      player.playVideo();
+    }
+  }
+}
+
+function onPlayerError(event) {
+  console.log('YouTube player error:', event.data);
+  retryCount++;
+  if (retryCount < maxRetries) {
+    setTimeout(function() {
+      if (player) {
+        player.playVideo();
+      }
+    }, 1000);
   }
 }
 
 function attemptPlay() {
   if (!player || !playerReady) return;
-  var playPromise = player.playVideo();
-  if (playPromise !== undefined) {
-    playPromise.then(function() {
-      isPlaying = true;
-      updateMusicButton(true);
-    }).catch(function() {
-      isPlaying = false;
-      updateMusicButton(false);
-    });
+  
+  try {
+    player.playVideo();
+  } catch(e) {
+    console.log('Play attempt failed:', e);
   }
 }
 
 function updateMusicButton(playing) {
   var toggleBtn = document.getElementById('musicToggle');
-  toggleBtn.style.display = 'flex';
   if (playing) {
     toggleBtn.classList.add('playing');
     toggleBtn.innerHTML = '🔇';
@@ -1409,27 +1415,26 @@ function openInvitation() {
   cover.classList.add('opened');
   userClickedOpen = true;
   
+  // ԱՆՄՋԱՊԵՍ փորձել միացնել երաժշտությունը (trusted event)
+  if (playerReady && player) {
+    attemptPlay();
+  }
+  
+  // Թաքցնել cover-ը
   setTimeout(function() {
     cover.classList.add('hidden');
     document.body.style.overflow = 'auto';
-    
-    if (playerReady && player) {
-      attemptPlay();
-    } else {
-      updateMusicButton(false);
-    }
   }, 1400);
 }
 
 function toggleMusic() {
   if (!player || !playerReady) return;
+  
   if (isPlaying) {
     player.pauseVideo();
   } else {
-    var playPromise = player.playVideo();
-    if (playPromise !== undefined) {
-      playPromise.catch(function() { console.log("Manual play failed"); });
-    }
+    attemptPlay();
+    retryCount = 0;
   }
 }
 
@@ -1438,11 +1443,3 @@ document.body.style.overflow = 'hidden';
 
 </body>
 </html>
-
-
-              <script>
-                              
-              </script>
-                        </body>
-                        </html>
-                    
