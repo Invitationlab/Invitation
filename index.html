@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Ստելլա • Արփի • Միքայել — Սուրբ Մկրտություն</title>
+<title>Ստելլա • Արի • Միքայել — Սուրբ Մկրտություն</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,7 @@
   --ivory: #FDFBF9;
   --champagne: #C8A96A;
   --champagne-deep: #A8874A;
+  --champagne-bright: #D4AF37;
   --beige: #F5EDE4;
   --blush: #F9F0EE;
   --sage: #E8EDE6;
@@ -46,7 +47,7 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 
 /* ═══════════════════════════════════════════
-   ENVELOPE COVER SCREEN - PREMIUM VERSION
+   ENVELOPE COVER SCREEN
    ═══════════════════════════════════════════ */
 .envelope-cover {
   position: fixed;
@@ -66,7 +67,6 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-/* Իրական թղթի տեքստուրա */
 .envelope-cover::before {
   content: "";
   position: absolute;
@@ -114,7 +114,6 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
 }
 
-/* Թղթի տեքստուրա */
 .envelope-body::before {
   content: "";
   position: absolute;
@@ -124,7 +123,6 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-/* Ծրարի ծալքեր */
 .envelope-flap {
   position: absolute;
   width: 100%;
@@ -153,16 +151,6 @@ a { text-decoration: none; color: inherit; }
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
-.envelope-flap-top::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
-}
-
 .envelope-cover.opened .envelope-flap-top {
   transform: rotateX(180deg);
   z-index: 0;
@@ -178,14 +166,6 @@ a { text-decoration: none; color: inherit; }
   z-index: 2;
 }
 
-.envelope-flap-bottom::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,0.08) 0%, transparent 100%);
-  clip-path: polygon(0 100%, 100% 100%, 50% 0);
-}
-
 .envelope-flap-left {
   top: 0;
   left: 0;
@@ -196,14 +176,6 @@ a { text-decoration: none; color: inherit; }
   z-index: 1;
 }
 
-.envelope-flap-left::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.05) 0%, transparent 100%);
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
-
 .envelope-flap-right {
   top: 0;
   right: 0;
@@ -212,14 +184,6 @@ a { text-decoration: none; color: inherit; }
   background: linear-gradient(270deg, #e0d3c2 0%, #e8dccd 100%);
   clip-path: polygon(100% 0, 0 50%, 100% 100%);
   z-index: 1;
-}
-
-.envelope-flap-right::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(270deg, rgba(0,0,0,0.05) 0%, transparent 100%);
-  clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 
 .envelope-inner {
@@ -251,30 +215,38 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
+/* ՍՈՒՐԲ ՄԿՐՏՈՒԹՈՒՆ - ՄԵԾ ԵՎ ՏԵՍԱՆԵԻ */
+.envelope-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 8vw, 42px);
+  font-weight: 600;
+  color: var(--champagne-bright);
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  text-shadow: 
+    0 2px 4px rgba(0,0,0,0.1),
+    0 4px 8px rgba(212,175,55,0.2);
+  animation: titleAppear 1.5s ease-out 0.3s both;
+  line-height: 1.2;
+}
+
+@keyframes titleAppear {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 .envelope-names {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(56px, 15vw, 88px);
+  font-size: clamp(48px, 13vw, 76px);
   color: var(--script-color);
   text-align: center;
   line-height: 1;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   text-shadow: 
     0 2px 4px rgba(0,0,0,0.08),
     0 4px 8px rgba(184,149,122,0.15);
   animation: namesAppear 1.8s ease-out 0.5s both;
-  position: relative;
-}
-
-.envelope-names::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--script-color), transparent);
-  opacity: 0.3;
 }
 
 @keyframes namesAppear {
@@ -282,7 +254,7 @@ a { text-decoration: none; color: inherit; }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* PREMIUM WAX SEAL */
+/* WAX SEAL */
 .wax-seal {
   width: clamp(100px, 24vw, 130px);
   height: clamp(100px, 24vw, 130px);
@@ -354,20 +326,7 @@ a { text-decoration: none; color: inherit; }
     0 2px 8px rgba(139,115,85,0.5),
     0 4px 12px rgba(0,0,0,0.2);
   animation: labelAppear 1.4s ease-out 1.1s both;
-  position: relative;
   letter-spacing: 2px;
-}
-
-.open-label::before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--white), transparent);
-  opacity: 0.5;
 }
 
 @keyframes labelAppear {
@@ -376,7 +335,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ═══════════════════════════════════════════
-   FLOATING GOLDEN PARTICLES
+   FLOATING PARTICLES
    ═══════════════════════════════════════════ */
 .particles {
   position: fixed; inset: 0; pointer-events: none; z-index: 1;
@@ -472,26 +431,31 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-cross {
-  font-size: 48px;
-  color: var(--champagne);
+  font-size: 56px;
+  color: var(--champagne-bright);
   margin-bottom: 30px;
   animation: crossPulse 3s ease-in-out infinite;
-  text-shadow: 0 0 30px rgba(230, 212, 168, 0.5);
+  text-shadow: 
+    0 0 20px rgba(212,175,55,0.6),
+    0 0 40px rgba(212,175,55,0.4),
+    0 4px 8px rgba(0,0,0,0.2);
 }
 
 @keyframes crossPulse {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
 }
 
 .hero-label {
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  letter-spacing: 8px;
-  color: var(--champagne-deep);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--champagne-bright);
   text-transform: uppercase;
   margin-bottom: 25px;
   animation: fadeUp 1.5s ease-out 0.5s both;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .hero-title {
@@ -520,7 +484,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
   font-size: clamp(28px, 7vw, 56px);
   letter-spacing: 6px;
-  background: linear-gradient(135deg, var(--champagne-deep) 0%, var(--champagne) 50%, var(--champagne-deep) 100%);
+  background: linear-gradient(135deg, var(--champagne-deep) 0%, var(--champagne-bright) 50%, var(--champagne-deep) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -542,7 +506,7 @@ a { text-decoration: none; color: inherit; }
 .hero-divider {
   width: 120px; height: 1px;
   margin: 40px auto 50px;
-  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
+  background: linear-gradient(90deg, transparent, var(--champagne-bright), transparent);
   position: relative;
   animation: fadeUp 1.5s ease-out 1.7s both;
 }
@@ -552,7 +516,7 @@ a { text-decoration: none; color: inherit; }
   position: absolute;
   left: 50%; top: 50%;
   transform: translate(-50%, -50%);
-  color: var(--champagne);
+  color: var(--champagne-bright);
   font-size: 14px;
   background: var(--ivory);
   padding: 0 12px;
@@ -581,7 +545,7 @@ a { text-decoration: none; color: inherit; }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ═════════════════════════════════════════
+/* ══════════════════════════════════════════
    SECTION BASE
    ══════════════════════════════════════════ */
 section {
@@ -624,7 +588,7 @@ section {
 
 /* ══════════════════════════════════════════
    COUNTDOWN SECTION
-   ═══════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 .countdown-section {
   background: linear-gradient(180deg, var(--ivory) 0%, var(--blush) 100%);
 }
@@ -663,7 +627,7 @@ section {
   font-weight: 500;
   line-height: 1;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, var(--champagne-deep) 0%, var(--champagne) 100%);
+  background: linear-gradient(135deg, var(--champagne-deep) 0%, var(--champagne-bright) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -678,9 +642,9 @@ section {
   font-weight: 500;
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    INVITATION SECTION
-   ═══════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 .invitation {
   background: linear-gradient(180deg, var(--blush) 0%, var(--beige) 100%);
 }
@@ -698,7 +662,6 @@ section {
   box-shadow: 0 30px 80px rgba(60, 45, 20, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   position: relative;
   overflow: hidden;
-  transition: all 0.5s ease;
 }
 
 .glass-card::before {
@@ -706,12 +669,12 @@ section {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
+  background: linear-gradient(90deg, transparent, var(--champagne-bright), transparent);
 }
 
 .glass-card .cross-icon {
   font-size: 36px;
-  color: var(--champagne);
+  color: var(--champagne-bright);
   margin-bottom: 30px;
   display: block;
   animation: softPulse 3s ease-in-out infinite;
@@ -719,7 +682,7 @@ section {
 
 @keyframes softPulse {
   0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; text-shadow: 0 0 20px rgba(200, 169, 106, 0.4); }
+  50% { opacity: 1; text-shadow: 0 0 20px rgba(212,175,55,0.4); }
 }
 
 .glass-card p {
@@ -744,12 +707,12 @@ section {
 .glass-card .date-highlight {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
-  color: var(--champagne);
+  color: var(--champagne-bright);
   letter-spacing: 3px;
   margin-top: 25px;
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    CARDS SECTION
    ══════════════════════════════════════════ */
 .details {
@@ -827,9 +790,9 @@ section {
   line-height: 1.6;
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    TIMELINE
-   ══════════════════════════════════════════ */
+   ═════════════════════════════════════════ */
 .timeline-section {
   background: linear-gradient(180deg, var(--sage) 0%, var(--blush) 50%, var(--ivory) 100%);
 }
@@ -847,7 +810,7 @@ section {
   left: 50%;
   top: 0; bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, transparent, var(--champagne), transparent);
+  background: linear-gradient(180deg, transparent, var(--champagne-bright), transparent);
   transform: translateX(-50%);
 }
 
@@ -870,8 +833,8 @@ section {
   width: 18px; height: 18px;
   border-radius: 50%;
   background: var(--white);
-  border: 3px solid var(--champagne);
-  box-shadow: 0 0 0 6px rgba(200, 169, 106, 0.15);
+  border: 3px solid var(--champagne-bright);
+  box-shadow: 0 0 0 6px rgba(212,175,55,0.15);
   z-index: 2;
 }
 
@@ -901,9 +864,9 @@ section {
   font-style: italic;
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    LOCATION SECTION
-   ═══════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 .location-section {
   background: linear-gradient(180deg, var(--ivory) 0%, var(--beige) 100%);
 }
@@ -963,19 +926,19 @@ section {
   align-items: center;
   gap: 10px;
   padding: 14px 30px;
-  background: linear-gradient(135deg, var(--champagne-deep), var(--champagne));
+  background: linear-gradient(135deg, var(--champagne-deep), var(--champagne-bright));
   color: white;
   border-radius: 30px;
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  box-shadow: 0 8px 20px rgba(200, 169, 106, 0.3);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    QUOTE SECTION
-   ═══════════════════════════════════════════ */
+   ═════════════════════════════════════════ */
 .quote-section {
   background: linear-gradient(180deg, var(--beige) 0%, var(--blush) 100%);
   text-align: center;
@@ -985,7 +948,7 @@ section {
 .quote-divider {
   width: 80px; height: 1px;
   margin: 0 auto 40px;
-  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
+  background: linear-gradient(90deg, transparent, var(--champagne-bright), transparent);
 }
 
 .quote-text {
@@ -999,9 +962,9 @@ section {
   line-height: 1.6;
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    MUSIC TOGGLE
-   ═══════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 .music-toggle {
   position: fixed;
   bottom: 30px;
@@ -1009,12 +972,12 @@ section {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--champagne-deep), var(--champagne));
+  background: linear-gradient(135deg, var(--champagne-deep), var(--champagne-bright));
   border: none;
   color: white;
   font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(200, 169, 106, 0.4);
+  box-shadow: 0 8px 25px rgba(212,175,55,0.4);
   transition: all 0.5s ease;
   z-index: 1000;
   display: none;
@@ -1030,9 +993,9 @@ section {
   50% { transform: scale(1.05); }
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    FOOTER
-   ═══════════════════════════════════════════ */
+   ═════════════════════════════════════════ */
 footer {
   text-align: center;
   padding: 60px 24px;
@@ -1042,7 +1005,7 @@ footer {
 
 .footer-ornament {
   font-size: 24px;
-  color: var(--champagne);
+  color: var(--champagne-bright);
   margin-bottom: 20px;
   letter-spacing: 8px;
 }
@@ -1062,9 +1025,9 @@ footer .names {
   margin-top: 15px;
 }
 
-/* ═══════════════════════════════════════════
+/* ══════════════════════════════════════════
    RESPONSIVE
-   ═══════════════════════════════════════════ */
+   ══════════════════════════════════════════ */
 @media(max-width: 768px) {
   section { padding: 100px 20px; }
   .glass-card { padding: 60px 30px; }
@@ -1080,10 +1043,13 @@ footer .names {
   .countdown-grid { gap: 16px; }
   .countdown-item { min-width: calc(50% - 8px); }
   .music-toggle { bottom: 80px; right: 15px; width: 45px; height: 45px; font-size: 18px; }
+  .envelope-title { font-size: clamp(24px, 9vw, 36px); letter-spacing: 2px; }
+  .envelope-names { font-size: clamp(42px, 14vw, 64px); }
 }
 
 @media(max-width: 360px) {
   .hero-names { letter-spacing: 1px; font-size: clamp(20px, 10vw, 36px); }
+  .envelope-title { font-size: clamp(22px, 10vw, 32px); }
 }
 
 @media(max-width: 600px) {
@@ -1113,6 +1079,7 @@ footer .names {
       <div class="envelope-flap envelope-flap-top"></div>
     </div>
     <div class="envelope-content">
+      <div class="envelope-title">Սուրբ Մկրտություն</div>
       <div class="envelope-names">Ստելլա, Արփի & Միքայել</div>
       <div class="wax-seal" onclick="openInvitation()" title="Բացել հրավիրատոմսը">
         <div class="wax-seal-inner">
@@ -1136,7 +1103,7 @@ footer .names {
           </svg>
         </div>
       </div>
-      <div class="open-label">բացել</div>
+      <div class="open-label">Բացել</div>
     </div>
   </div>
 </div>
@@ -1167,7 +1134,7 @@ footer .names {
     <div class="hero-label">Սուրբ Մկրտություն</div>
     <h1 class="hero-title">Օրհնությամբ սկսվող նոր ճանապարհ</h1>
     <p class="hero-subtitle">Սիրով հրավիրում ենք մասնակցելու մեր երեխաների Սուրբ Մկրտության Արարողությանը</p>
-    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐՓԻ • ՄԻՔԱՅԵԼ</div>
+    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐԻ • ՄԻՔԱՅԵԼ</div>
     <div class="hero-date">01.11.2026</div>
     <div class="hero-divider"></div>
   </div>
@@ -1179,9 +1146,9 @@ footer .names {
   <div class="container">
     <div class="glass-card">
       <span class="cross-icon">✝</span>
-      <p>Սիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ մեր երեխաների</p>
-      <div class="names">Ստելլայի,<br>Արփիի<br>և<br>Միքայելի</div>
-      <p>Սուրբ Մկրտության լուսավոր օրը։</p>
+      <p>րհնությամբ և սիրով հրավիրում ենք Ձեզ մասնակցելու մեր երեխաների</p>
+      <div class="names">Ստելլայի,<br>Արփիի<br>և<br>իքայելի</div>
+      <p>Սուրբ Մկրտության Արարողությանը։</p>
       <div class="date-highlight">01 Նոյեմբերի, 2026</div>
     </div>
   </div>
@@ -1224,19 +1191,19 @@ footer .names {
 
     <div class="cards-grid">
       <div class="event-card">
-        <span class="event-icon" style="color: var(--champagne);">✝</span>
+        <span class="event-icon" style="color: var(--champagne-bright);">✝</span>
         <h3>Սուրբ Մկրտության Արարողություն</h3>
         <div class="event-detail"><strong>01 Նոյեմբերի, 2026</strong></div>
-        <div class="event-detail"><span class="icon"></span> <strong>15:45</strong></div>
-        <div class="event-detail"><span class="icon">📍</span> <span>Սուրբ Հովհաննես Եկեղեցի</span></div>
+        <div class="event-detail"><span class="icon">🕒</span> <strong>15:45</strong></div>
+        <div class="event-detail"><span class="icon"></span> <span>Սուրբ Հովհաննես Եկեղեցի</span></div>
         <p class="subtext">Աբովյան, Հայաստան</p>
       </div>
 
       <div class="event-card">
         <span class="event-icon">🥂</span>
         <h3>Տոնական Ընդունելություն</h3>
-        <div class="event-detail"><span class="icon"></span> <span>Օրիգինալ Ռեստորան</span></div>
-        <div class="event-detail"><span class="icon">🕒</span> <strong>17:00</strong></div>
+        <div class="event-detail"><span class="icon">📍</span> <span>Օրիգինալ Ռեստորան</span></div>
+        <div class="event-detail"><span class="icon"></span> <strong>17:00</strong></div>
         <p class="subtext">Եկեք միասին տոնենք այս օրհնյալ օրը՝ ստեղծելով հիշողություններ, որոնք կմնան մեր սրտերում։</p>
       </div>
     </div>
@@ -1246,7 +1213,7 @@ footer .names {
 <!-- TIMELINE SECTION -->
 <section class="timeline-section">
   <div class="container">
-    <div class="section-label">✦ Օրվա Ծրագիր ✦</div>
+    <div class="section-label">✦ Օրվա Ծրագիր </div>
     <h2 class="section-title">Ժամանակացույց</h2>
     <div class="divider"></div>
 
@@ -1268,7 +1235,7 @@ footer .names {
 <!-- LOCATION SECTION -->
 <section class="location-section">
   <div class="container">
-    <div class="section-label"> Վայրեր ✦</div>
+    <div class="section-label">✦ Վայրեր ✦</div>
     <h2 class="section-title">Արարողության Վայրերը</h2>
     <div class="divider"></div>
 
@@ -1279,7 +1246,7 @@ footer .names {
           <h3>⛪ Սուրբ Հովհաննես Եկեղեցի</h3>
           <p>Աբովյան, Հայաստան</p>
           <a href="https://maps.google.com/?q=Abovyan+Armenia" target="_blank" class="location-btn">
-            <span>📍</span> <span>Բացել Քարտեզում</span>
+            <span></span> <span>Բացել արտեզում</span>
           </a>
         </div>
       </div>
@@ -1302,7 +1269,7 @@ footer .names {
 <section class="quote-section">
   <div class="container">
     <div class="quote-divider"></div>
-    <p class="quote-text">"Ձեր ներկայությունը կդարձնի այս oրհնյալ օրն էլ ավելի լիարժեք և անմոռանալի մեզ համար։"</p>
+    <p class="quote-text">"Ձեր ներկայությունը կդարձնի այս օրհնյալ օրն էլ ավելի լիարժեք և անմոռանալի մեզ համար։"</p>
     <div class="quote-divider"></div>
   </div>
 </section>
@@ -1312,13 +1279,10 @@ footer .names {
   <div class="footer-ornament">✦ ✦ ✦</div>
   <p>Օրհնությամբ և սիրով պատրաստված</p>
   <p>Սուրբ Մկրտություն · 2026</p>
-  <div class="names">ՍՏԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱԵԼ</div>
+  <div class="names">ՍՏԵԼԼԱ · ԱՐԻ · ՄԻՔԱԵԼ</div>
 </footer>
 
 <script>
-// ══════════════════════════════════════════
-// COUNTDOWN TIMER
-// ═══════════════════════════════════════════
 const targetDate = new Date('2026-11-01T15:45:00').getTime();
 
 function updateCountdown() {
@@ -1344,9 +1308,6 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// ═══════════════════════════════════════════
-// YOUTUBE MUSIC PLAYER
-// ══════════════════════════════════════════
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
