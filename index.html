@@ -1,9 +1,28 @@
-<!DOCTYPE html>
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+
+                .hero-cross {
+  display: none !important;
+}
+
+
+              </style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
 <html lang="hy">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Ստելլա • Արի • Միքայել — Սուրբ Մկրտություն</title>
+<title>Ստելլա • Արփի • Միքայել — Սուրբ Մկրտություն</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -215,7 +234,6 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-/* ՍՈՒՐԲ ՄԿՐՏՈՒԹՈՒՆ - ՄԵԾ ԵՎ ՏԵՍԱՆԵԻ */
 .envelope-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(28px, 8vw, 42px);
@@ -254,7 +272,6 @@ a { text-decoration: none; color: inherit; }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* WAX SEAL */
 .wax-seal {
   width: clamp(100px, 24vw, 130px);
   height: clamp(100px, 24vw, 130px);
@@ -1035,6 +1052,11 @@ footer .names {
   .cards-grid { gap: 24px; }
   .countdown-item { min-width: 100px; padding: 25px 15px; }
   .music-toggle { bottom: 100px; right: 20px; width: 50px; height: 50px; font-size: 20px; }
+  
+  /* Հեռացնել խաչը mobile-ում */
+  .hero-cross {
+    display: none !important;
+  }
 }
 
 @media(max-width: 480px) {
@@ -1134,7 +1156,7 @@ footer .names {
     <div class="hero-label">Սուրբ Մկրտություն</div>
     <h1 class="hero-title">Օրհնությամբ սկսվող նոր ճանապարհ</h1>
     <p class="hero-subtitle">Սիրով հրավիրում ենք մասնակցելու մեր երեխաների Սուրբ Մկրտության Արարողությանը</p>
-    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐԻ • ՄԻՔԱՅԵԼ</div>
+    <div class="hero-names">ՍՏԵԼԼԱ • ԱՐՓԻ • ՄԻՔԱՅԵԼ</div>
     <div class="hero-date">01.11.2026</div>
     <div class="hero-divider"></div>
   </div>
@@ -1146,8 +1168,8 @@ footer .names {
   <div class="container">
     <div class="glass-card">
       <span class="cross-icon">✝</span>
-      <p>րհնությամբ և սիրով հրավիրում ենք Ձեզ մասնակցելու մեր երեխաների</p>
-      <div class="names">Ստելլայի,<br>Արփիի<br>և<br>իքայելի</div>
+      <p>Օրհնությամբ և սիրով հրավիրում ենք Ձեզ մասնակցելու մեր երեխաների</p>
+      <div class="names">Ստելլայի,<br>Արփիի<br>և<br>Միքայելի</div>
       <p>Սուրբ Մկրտության Արարողությանը։</p>
       <div class="date-highlight">01 Նոյեմբերի, 2026</div>
     </div>
@@ -1157,14 +1179,14 @@ footer .names {
 <!-- COUNTDOWN SECTION -->
 <section class="countdown-section">
   <div class="container">
-    <div class="section-label">✦ Հետհաշվարկ </div>
+    <div class="section-label">✦ Հետհաշվարկ ✦</div>
     <h2 class="section-title">Մինչև Արարողությունը Մնացել է</h2>
     <div class="divider"></div>
     
     <div class="countdown-grid">
       <div class="countdown-item">
         <div class="countdown-number" id="days">00</div>
-        <div class="countdown-label">ր</div>
+        <div class="countdown-label">Օր</div>
       </div>
       <div class="countdown-item">
         <div class="countdown-number" id="hours">00</div>
@@ -1185,7 +1207,7 @@ footer .names {
 <!-- DETAILS SECTION -->
 <section class="details">
   <div class="container">
-    <div class="section-label">✦ Արարողություն </div>
+    <div class="section-label">✦ Արարողություն ✦</div>
     <h2 class="section-title">Մկրտության մանրամասներ</h2>
     <div class="divider"></div>
 
@@ -1195,7 +1217,7 @@ footer .names {
         <h3>Սուրբ Մկրտության Արարողություն</h3>
         <div class="event-detail"><strong>01 Նոյեմբերի, 2026</strong></div>
         <div class="event-detail"><span class="icon">🕒</span> <strong>15:45</strong></div>
-        <div class="event-detail"><span class="icon"></span> <span>Սուրբ Հովհաննես Եկեղեցի</span></div>
+        <div class="event-detail"><span class="icon">📍</span> <span>Սուրբ Հովհաննես Եկեղեցի</span></div>
         <p class="subtext">Աբովյան, Հայաստան</p>
       </div>
 
@@ -1203,8 +1225,8 @@ footer .names {
         <span class="event-icon">🥂</span>
         <h3>Տոնական Ընդունելություն</h3>
         <div class="event-detail"><span class="icon">📍</span> <span>Օրիգինալ Ռեստորան</span></div>
-        <div class="event-detail"><span class="icon"></span> <strong>17:00</strong></div>
-        <p class="subtext">Եկեք միասին տոնենք այս օրհնյալ օրը՝ ստեղծելով հիշողություններ, որոնք կմնան մեր սրտերում։</p>
+        <div class="event-detail"><span class="icon">🕒</span> <strong>17:00</strong></div>
+        <p class="subtext">Եկեք միասին տոնենք այս օրհնյալ օրը ստեղծելով հիշողություններ, որոնք կմնան մեր սրտերում։</p>
       </div>
     </div>
   </div>
@@ -1213,7 +1235,7 @@ footer .names {
 <!-- TIMELINE SECTION -->
 <section class="timeline-section">
   <div class="container">
-    <div class="section-label">✦ Օրվա Ծրագիր </div>
+    <div class="section-label">✦ Օրվա Ծրագիր ✦</div>
     <h2 class="section-title">Ժամանակացույց</h2>
     <div class="divider"></div>
 
@@ -1246,7 +1268,7 @@ footer .names {
           <h3>⛪ Սուրբ Հովհաննես Եկեղեցի</h3>
           <p>Աբովյան, Հայաստան</p>
           <a href="https://maps.google.com/?q=Abovyan+Armenia" target="_blank" class="location-btn">
-            <span></span> <span>Բացել արտեզում</span>
+            <span>📍</span> <span>Բացել Քարտեզում</span>
           </a>
         </div>
       </div>
@@ -1276,10 +1298,9 @@ footer .names {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-ornament">✦ ✦ ✦</div>
-  <p>Օրհնությամբ և սիրով պատրաստված</p>
+  <div class="footer-ornament"> ✦ ✦</div>
   <p>Սուրբ Մկրտություն · 2026</p>
-  <div class="names">ՍՏԵԼԼԱ · ԱՐԻ · ՄԻՔԱԵԼ</div>
+  <div class="names">ՍԵԼԼԱ · ԱՐՓԻ · ՄԻՔԱՅԵԼ</div>
 </footer>
 
 <script>
@@ -1417,3 +1438,11 @@ document.body.style.overflow = 'hidden';
 
 </body>
 </html>
+
+
+              <script>
+                              
+              </script>
+                        </body>
+                        </html>
+                    
