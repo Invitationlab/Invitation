@@ -103,74 +103,134 @@ font-family:'Great Vibes',cursive;font-size:40px;
 color:#fff;margin-top:28px;text-shadow:0 2px 8px #8b735580
 }
 
-/* HERO */
+/* HERO: TITLE ABOVE THE PHOTO */
 .hero{
-position:relative;min-height:100vh;min-height:100svh;
-display:flex;align-items:center;justify-content:center;
-text-align:center;overflow:hidden;background:var(--ivory)
+position:relative;
+min-height:100vh;
+min-height:100svh;
+height:100svh;
+display:flex;
+flex-direction:column;
+align-items:stretch;
+text-align:center;
+overflow:hidden;
+background:var(--ivory)
 }
+
+/* The photo begins below the title area */
 .hero-bg-image{
-position:absolute;inset:0;
+position:absolute;
+top:190px;
+left:0;
+right:0;
+bottom:0;
 background-image:url('children.jpg');
 background-size:cover;
-background-position:center center;
+background-position:center 25%;
 background-repeat:no-repeat;
 background-attachment:scroll;
 animation:slowZoom 20s ease-in-out infinite alternate
 }
 @keyframes slowZoom{
 0%{transform:scale(1)}
-100%{transform:scale(1.05)}
+100%{transform:scale(1.04)}
 }
+
+/* Overlay applies only to the photo */
 .hero-overlay{
-position:absolute;inset:0;
-background:linear-gradient(180deg,
-rgba(253,251,249,.3),
-rgba(253,251,249,.5) 50%,
-rgba(253,251,249,.7))
+position:absolute;
+top:190px;
+left:0;
+right:0;
+bottom:0;
+background:linear-gradient(
+180deg,
+rgba(253,251,249,.02),
+rgba(253,251,249,.08) 60%,
+rgba(253,251,249,.28)
+)
 }
+
+/* Solid ivory title panel */
 .hero-content{
-position:relative;z-index:3;padding:80px 24px;
-max-width:900px;width:100%;
-animation:fadeIn 2s ease both
+position:relative;
+z-index:3;
+width:100%;
+height:190px;
+flex-shrink:0;
+padding:16px 20px 12px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+background:var(--ivory);
+animation:fadeIn 1.5s ease both
 }
 @keyframes fadeIn{
-from{opacity:0;transform:translateY(25px)}
+from{opacity:0;transform:translateY(-10px)}
 to{opacity:1;transform:none}
 }
 .hero-cross{
-font-size:56px;color:var(--gold);margin-bottom:25px;
-text-shadow:0 0 20px #d4af3799
+font-size:30px;
+line-height:1;
+color:var(--gold);
+margin-bottom:8px;
+text-shadow:0 0 12px #d4af3733
 }
 .hero-label{
 font-family:'Playfair Display',serif;
-font-size:clamp(22px,5vw,36px);font-weight:600;
-letter-spacing:3px;color:var(--gold);margin-bottom:25px;
-text-shadow:0 2px 4px #0002
+font-size:clamp(22px,4vw,34px);
+font-weight:500;
+letter-spacing:2px;
+color:var(--deep);
+line-height:1.35;
+margin-bottom:5px
 }
 .hero-title{
-font-family:'Playfair Display',serif;font-weight:400;
-font-style:italic;font-size:clamp(36px,7vw,72px);
-color:var(--ink);line-height:1.2;margin-bottom:25px
+font-family:'Playfair Display',serif;
+font-weight:400;
+font-style:italic;
+font-size:clamp(30px,6vw,52px);
+color:var(--ink);
+line-height:1.2;
+margin-bottom:5px
 }
 .hero-date{
 font-family:'Playfair Display',serif;
-font-size:clamp(19px,4vw,24px);color:var(--deep);
-letter-spacing:3px;margin-top:20px
+font-size:clamp(16px,3vw,21px);
+color:var(--deep);
+letter-spacing:2px;
+margin-top:5px
 }
 .hero-divider,.quote-divider,.divider{
-height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)
+height:1px;
+background:linear-gradient(90deg,transparent,var(--gold),transparent)
 }
-.hero-divider{width:120px;margin:40px auto 20px;position:relative}
+.hero-divider{
+width:100px;
+margin:8px auto 0;
+position:relative
+}
 .hero-divider:before{
-content:"✦";position:absolute;left:50%;top:50%;
-transform:translate(-50%,-50%);background:var(--ivory);
-padding:0 12px;color:var(--gold)
+content:"✦";
+position:absolute;
+left:50%;top:50%;
+transform:translate(-50%,-50%);
+background:var(--ivory);
+padding:0 10px;
+color:var(--gold)
 }
 .scroll-indicator{
-position:absolute;bottom:30px;left:50%;
-transform:translateX(-50%);font-family:'Poppins',sans-serif;
-font-size:10px;letter-spacing:5px;color:var(--muted)
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+font-family:'Poppins',sans-serif;
+font-size:10px;
+letter-spacing:4px;
+color:#fff;
+text-shadow:0 1px 5px #0008;
+z-index:4
 }
 
 /* GENERAL SECTIONS */
@@ -310,39 +370,61 @@ section{padding:85px 20px}
 .glass-card{padding:55px 28px}
 .countdown-item{min-width:calc(50% - 12px);padding:24px 12px}
 .music-toggle{bottom:24px;right:18px;width:48px;height:48px}
-.hero-cross{display:none}
 }
 
-/* MOBILE PHOTO FIX */
+/* MOBILE: TITLE ABOVE PHOTO */
 @media(max-width:600px){
 .hero{
-min-height:100vh;
-min-height:100svh;
-height:auto;
-align-items:center;
-background:#FDFBF9
+height:100svh;
+min-height:620px;
+align-items:stretch;
+background:var(--ivory)
+}
+.hero-content{
+height:160px;
+padding:12px 12px 10px;
+justify-content:center;
+background:var(--ivory)
+}
+.hero-cross{
+font-size:23px;
+margin-bottom:5px
+}
+.hero-label{
+font-size:clamp(20px,5.5vw,27px);
+letter-spacing:1.5px;
+margin-bottom:3px
+}
+.hero-divider{
+width:75px;
+margin-top:7px
 }
 .hero-bg-image{
-inset:0;
-background-size:contain;
-background-position:center center;
+top:160px;
+left:0;
+right:0;
+bottom:0;
+background-size:cover;
+background-position:center 20%;
 background-repeat:no-repeat;
-background-attachment:scroll;
 animation:none!important;
 transform:none!important
 }
 .hero-overlay{
+top:160px;
+left:0;
+right:0;
+bottom:0;
 background:linear-gradient(
 180deg,
-rgba(253,251,249,.18),
-rgba(253,251,249,.35) 55%,
-rgba(253,251,249,.72)
+rgba(253,251,249,0),
+rgba(253,251,249,.04) 65%,
+rgba(253,251,249,.2)
 )
 }
-.hero-content{padding:100px 18px 85px;width:100%}
-.hero-title{font-size:clamp(31px,8vw,43px);line-height:1.25}
-.hero-label{font-size:clamp(18px,5vw,25px);letter-spacing:2px}
-.hero-date{font-size:19px;letter-spacing:2px}
+.hero-title{font-size:31px;line-height:1.25}
+.hero-date{font-size:17px;letter-spacing:1px}
+.scroll-indicator{bottom:15px}
 .timeline:before{left:22px}
 .tl-item,.tl-item:nth-child(even){
 width:100%;margin-left:0;padding:20px 15px 20px 55px;text-align:left
@@ -352,9 +434,9 @@ left:14px;right:auto
 }
 }
 @media(max-width:380px){
-.hero-content{padding-left:14px;padding-right:14px}
-.hero-title{font-size:30px}
-.hero-label{letter-spacing:1px}
+.hero-content{height:150px;padding-left:10px;padding-right:10px}
+.hero-bg-image,.hero-overlay{top:150px}
+.hero-label{font-size:20px;letter-spacing:1px}
 .envelope-title{font-size:26px}
 }
 </style>
@@ -394,11 +476,14 @@ left:14px;right:auto
 <section class="hero">
   <div class="hero-bg-image"></div>
   <div class="hero-overlay"></div>
+
+  <!-- Վերնագիրը առանձին բաց գույնի հատվածում է՝ նկարի վերևում -->
   <div class="hero-content">
     <div class="hero-cross">✝</div>
     <div class="hero-label">Սուրբ Մկրտություն</div>
     <div class="hero-divider"></div>
   </div>
+
   <div class="scroll-indicator">ՆԵՐՔԵՎ</div>
 </section>
 
@@ -407,9 +492,9 @@ left:14px;right:auto
   <div class="container">
     <div class="glass-card">
       <span class="cross-icon">✝</span>
-      <p>Սիրով հրավիրում ենք Ձեզ մասնակցելու մեր երեխաների'</p>
+      <p>Սիրով հրավիրում ենք Ձեզ մասնակցելու մեր սիրելի երեխաների՝</p>
       <div class="names">Ստելլայի,<br>Արփիի<br>և<br>Միքայելի</div>
-      <p>Սուրբ Մկրտության Արարողությանը։</p>
+      <p>Սուրբ Մկրտության արարողությանը։</p>
       <div class="date-highlight">01 Նոյեմբերի, 2026</div>
     </div>
   </div>
@@ -419,7 +504,7 @@ left:14px;right:auto
 <section class="countdown-section">
   <div class="container">
     <div class="section-label">✦ Հետհաշվարկ ✦</div>
-    <h2 class="section-title">Մինչև Արարողությունը Մնացել է</h2>
+    <h2 class="section-title">Մինչև արարողությունը մնացել է</h2>
     <div class="divider"></div>
     <div class="countdown-grid">
       <div class="countdown-item"><div class="countdown-number" id="days">00</div><div class="countdown-label">Օր</div></div>
@@ -433,19 +518,19 @@ left:14px;right:auto
 <!-- TIMELINE -->
 <section class="timeline-section">
   <div class="container">
-    <div class="section-label">✦ Օրվա Ծրագիր ✦</div>
+    <div class="section-label">✦ Օրվա ծրագիր ✦</div>
     <h2 class="section-title">Ժամանակացույց</h2>
     <div class="divider"></div>
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-time">15:45</div>
         <div class="tl-title">Սուրբ Մկրտություն</div>
-        <div class="tl-loc">Սուրբ Հովհաննես Եկեղեցի</div>
+        <div class="tl-loc">Սուրբ Հովհաննես եկեղեցի</div>
       </div>
       <div class="tl-item">
         <div class="tl-time">17:30</div>
         <div class="tl-title">Տոնական ընթրիք</div>
-        <div class="tl-loc">Օրիգինալ Ռեստորան</div>
+        <div class="tl-loc">«Օրիգինալ» ռեստորան</div>
       </div>
     </div>
   </div>
@@ -455,23 +540,25 @@ left:14px;right:auto
 <section class="location-section">
   <div class="container">
     <div class="section-label">✦ Վայրեր ✦</div>
-    <h2 class="section-title">Արարողության Վայրերը</h2>
+    <h2 class="section-title">Արարողության վայրերը</h2>
     <div class="divider"></div>
+
     <div class="location-grid">
       <div class="location-card">
         <div class="location-img" style="background-image:url('Church.jpg')"></div>
         <div class="location-body">
-          <h3>Սուրբ Հովհաննես Եկեղեցի</h3>
+          <h3>Սուրբ Հովհաննես եկեղեցի</h3>
           <p>Աբովյան, Հայաստան</p>
-          <a href="https://maps.google.com/?q=Abovyan+Armenia" target="_blank" rel="noopener" class="location-btn">📍 Բացել Քարտեզում</a>
+          <a href="https://maps.google.com/?q=Saint+Hovhannes+Church+Abovyan+Armenia" target="_blank" rel="noopener" class="location-btn">📍 Բացել քարտեզում</a>
         </div>
       </div>
+
       <div class="location-card">
         <div class="location-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85')"></div>
         <div class="location-body">
-          <h3>🥂 Օրիգինալ Ռեստորան</h3>
+          <h3>🥂 «Օրիգինալ» ռեստորան</h3>
           <p>Տոնական ընթրիքի վայր</p>
-          <a href="https://maps.google.com/?q=Original+Restaurant+Armenia" target="_blank" rel="noopener" class="location-btn">📍 Բացել Քարտեզում</a>
+          <a href="https://maps.google.com/?q=Original+Restaurant+Armenia" target="_blank" rel="noopener" class="location-btn">📍 Բացել քարտեզում</a>
         </div>
       </div>
     </div>
@@ -482,7 +569,7 @@ left:14px;right:auto
 <section class="quote-section">
   <div class="container">
     <div class="quote-divider"></div>
-    <p class="quote-text">«Շնորհակալ ենք. որ մեր ընտանիքի այս գեղեցիկ և օրհնյալ օրը մեր կողքին եք։ </p>
+    <p class="quote-text">«Շնորհակալ ենք, որ մեր ընտանիքի այս գեղեցիկ և օրհնյալ օրը մեր կողքին եք։ Ձեր ներկայությամբ այս օրը կդառնա առավել ջերմ ու հիշարժան։ Սիրով սպասում ենք Ձեզ՝ միասին կիսելու մեր փոքրիկների ուրախությունն ու ստեղծելու գեղեցիկ հիշողություններ»։</p>
     <div class="quote-divider"></div>
   </div>
 </section>
@@ -495,19 +582,21 @@ left:14px;right:auto
 </footer>
 
 <!-- MUSIC -->
-<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Միացնել/Անջատել երաժշտությունը">🎵</button>
+<button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Միացնել/անջատել երաժշտությունը">🎵</button>
 <div id="yt-player" style="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none;z-index:-1"></div>
 
 <script>
-const targetDate = new Date('2026-11-01T15:45:00').getTime();
+const targetDate = new Date('2026-11-01T15:45:00+04:00').getTime();
 
 function updateCountdown(){
   const distance = targetDate - Date.now();
+
   if(distance < 0){
     document.querySelector('.countdown-grid').innerHTML =
-      '<div class="countdown-item"><div class="countdown-number" style="font-size:26px">Արարողությունը կայացել է</div></div>';
+      '<div class="countdown-item"><div class="countdown-number" style="font-size:26px">Արարողության օրը եկել է</div></div>';
     return;
   }
+
   document.getElementById('days').textContent =
     Math.floor(distance/86400000).toString().padStart(2,'0');
   document.getElementById('hours').textContent =
@@ -517,6 +606,7 @@ function updateCountdown(){
   document.getElementById('seconds').textContent =
     Math.floor(distance%60000/1000).toString().padStart(2,'0');
 }
+
 updateCountdown();
 setInterval(updateCountdown,1000);
 
@@ -535,8 +625,14 @@ function onYouTubeIframeAPIReady(){
     width:'1',
     videoId:'0COdq1IT5Hc',
     playerVars:{
-      autoplay:0,playsinline:1,controls:0,disablekb:1,
-      fs:0,rel:0,loop:1,playlist:'0COdq1IT5Hc'
+      autoplay:0,
+      playsinline:1,
+      controls:0,
+      disablekb:1,
+      fs:0,
+      rel:0,
+      loop:1,
+      playlist:'0COdq1IT5Hc'
     },
     events:{
       onReady:onPlayerReady,
@@ -564,7 +660,11 @@ function onPlayerStateChange(event){
 
 function attemptPlay(){
   if(player && playerReady){
-    try{player.playVideo();}catch(error){console.log(error);}
+    try{
+      player.playVideo();
+    }catch(error){
+      console.log(error);
+    }
   }
 }
 
@@ -578,7 +678,9 @@ function openInvitation(){
   const cover = document.getElementById('envelopeCover');
   cover.classList.add('opened');
   userClickedOpen = true;
+
   if(playerReady) attemptPlay();
+
   setTimeout(function(){
     cover.classList.add('hidden');
     document.body.style.overflow = 'auto';
